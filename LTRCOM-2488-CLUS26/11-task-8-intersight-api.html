@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>Task 8 - Intersight API - LTRCOM-2488</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Task 8 - Intersight API";
+        var mkdocs_page_input_path = "11-task-8-intersight-api.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="index.html" class="icon icon-home"> LTRCOM-2488
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="index.html">Front Matter</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="01-background.html">Background</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="02-scenario.html">Scenario</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="03-network-diagram.html">Network Diagram</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="04-task-1-lets-start-with-the-lab.html">Task 1 - Let's start with the lab!</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="05-task-2-configuring-fabric-interconnects.html">Task 2 - Configuring Fabric Interconnects</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="06-task-3-create-chassis-policy-template.html">Task 3 - Create Chassis Policy Template</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="07-task-4-inventory.html">Task 4 - Inventory</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="08-task-5-create-server-profile-template.html">Task 5 - Create Server Profile Template</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="09-task-6-deploying-server-profiles.html">Task 6 - Deploying Server Profiles</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="10-task-7-metrics.html">Task 7 - Metrics</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Task 8 - Intersight API</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#step-1-where-to-find-the-intersight-api-rest-client">Step 1: Where to find the Intersight API Rest Client?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-2-getting-chassis-information">Step 2: Getting Chassis Information</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-3-query-parameters">Step 3: Query Parameters</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-4-opensource-tools">Step 4: Opensource tools</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="12-bonus-task.html">Bonus Task</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="13-the-end.html">The End</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">LTRCOM-2488</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html" class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Task 8 - Intersight API</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="task-8-intersight-api">Task 8: Intersight API</h1>
+<ul>
+<li>APIs are very useful for automation and get information quickly.</li>
+<li>In this section we will go over the Intersight API Rest Client and how you can use it.</li>
+<li>There are open-source applications, like isctl that can be used to create your own</li>
+<li>Script/application.</li>
+</ul>
+<h2 id="step-1-where-to-find-the-intersight-api-rest-client">Step 1: Where to find the Intersight API Rest Client?</h2>
+<p>When you are loged in into Intersight, you can go to the Help Center.</p>
+<p><img alt="image251.png" src="media/image251.png" /></p>
+<p><em>Figure 242</em></p>
+<p>Once you are at the Intersight Help Center, Scroll all the way down to the Intersight Services” and select API Documentation.</p>
+<p><img alt="image252.png" src="media/image252.png" /></p>
+<p><em>Figure 243</em></p>
+<p>At the top bar, click API reference and here you will see the API Rest Client.</p>
+<p><img alt="image253.png" src="media/image253.png" /></p>
+<p><em>Figure 244</em></p>
+<h2 id="step-2-getting-chassis-information">Step 2: Getting Chassis Information</h2>
+<p>In this step you will see how you can get information out of the API.</p>
+<p>Find the equipment/Chssisidentities by using the search bar. You will see scrolling to the list is time consuming.</p>
+<p><img alt="image254.png" src="media/image254.png" /></p>
+<p><em>Figure 245</em></p>
+<p>When you open it, there are two the same get. The top one is to get all information of all chassis in the tenant. The second one is to get specific information of a chassis, but then you will have to know the MOID.</p>
+<p><img alt="image255.png" src="media/image255.png" /></p>
+<p><em>Figure 246</em></p>
+<p>Select the top GET and make sure REST Client is enabled. When it is enabled, you will see the REST Client on the right. Click Send.</p>
+<p><img alt="image256.png" src="media/image256.png" /></p>
+<p><em>Figure 247</em></p>
+<p>When you see a “200 success” the API information is there. You will see different MOID in the response and you will have to search for your chassis and MOID. Search for Chassis you want to get more information and then copy that MOID number.</p>
+<p><img alt="image257.png" src="media/image257.png" /></p>
+<p><em>Figure 248</em></p>
+<p>Go back to the left and now click on the second get:</p>
+<p><img alt="image258.png" src="media/image258.png" /></p>
+<p><em>Figure 249</em></p>
+<p>With this get, you need the MOID that you just copied. Fill it in the {Moid} field.</p>
+<p><img alt="image259.png" src="media/image259.png" /></p>
+<p><em>Figure 250</em></p>
+<p>The result is that you get only information about one chassis.</p>
+<p><img alt="image260.png" src="media/image260.png" /></p>
+<p><em>Figure 251</em></p>
+<h2 id="step-3-query-parameters">Step 3: Query Parameters</h2>
+<p>To get only the information you want to have, Query Parameters can be used.</p>
+<p>Select the first “get” of the equipment/Chassisidentities and add a Query Paramter. The Key is $select and the Value is Name, Serial. The Moid will be shown, eventhough it is not selected.</p>
+<p><img alt="image261.png" src="media/image261.png" /></p>
+<p><em>Figure 252</em></p>
+<p>To show serial numbers and models of the servers connected to a particular Fabric Interconnect we are using the Compute/PhysicalSummaries API. This will give you ideas how to use the query parameters.</p>
+<p>Find this API in the search bar.</p>
+<p><img alt="image262.png" src="media/image262.png" /></p>
+<p><em>Figure 253</em></p>
+<p>Select the first Get and add a Query Parameter.</p>
+<p>Key: $select and Value: Name, Serial, Model Then add another Query Parameter:</p>
+<p>Key; $filter and Value: startswith(Name,’RTP91-FI6454-03-1’)</p>
+<p><img alt="image263.png" src="media/image263.png" /></p>
+<p><em>Figure 254</em></p>
+<h2 id="step-4-opensource-tools">Step 4: Opensource tools</h2>
+<p>The Intersight REST API Client is great and it is possible to use other tools like isctl. First you have to download it from : https://github.com/cgascoig/isctl</p>
+<p><img alt="image264.png" src="media/image264.png" /></p>
+<p><em>Figure 255</em></p>
+<p>On the right side of the webpage, click on the latest release.</p>
+<p><img alt="image265.png" src="media/image265.png" /></p>
+<p><em>Figure 256</em></p>
+<p>Download the windows version.</p>
+<p><img alt="image266.png" src="media/image266.png" /></p>
+<p><em>Figure 257</em></p>
+<p>Extract the file and copy the executable in a directory on the laptop.</p>
+<p><img alt="image267.png" src="media/image267.png" /></p>
+<p><em>Figure 258</em></p>
+<p>Before you can use this application, you must have an API key of Intersight.</p>
+<p>Go to Intersight / Settings.</p>
+<p><img alt="image268.png" src="media/image268.png" /></p>
+<p><em>Figure 259</em></p>
+<p><img alt="Go to API Keys and generate an API Key for OpenAPI schema version 3." src="media/image269.png" /></p>
+<p>Go to API Keys and generate an API Key for OpenAPI schema version 3.</p>
+<p><em>Figure 260</em></p>
+<p>Give it a description and expiration date for the future.</p>
+<p><img alt="image270.png" src="media/image270.png" /></p>
+<p><em>Figure 261</em></p>
+<p>When the API Key is generated, copy the API Key ID and download the secret key. Do not close this window, until you are certain the isctl application is working.</p>
+<p><img alt="image271.png" src="media/image271.png" /></p>
+<p><em>Figure 262</em></p>
+<p>Open the Command prompt in Windows (CMD)</p>
+<p>And type: isctl configure</p>
+<p>You will have to give the API Key ID and the location of the API secret key file.</p>
+<p><img alt="image272.png" src="media/image272.png" /></p>
+<p><em>Figure 263</em></p>
+<p><img alt="image273.png" src="media/image273.png" /></p>
+<p><em>Figure 264</em></p>
+<p>Once that is working, you can test it by typing the following command; isctl get ntp policy</p>
+<p><img alt="image274.png" src="media/image274.png" /></p>
+<p><em>Figure 265</em></p>
+<p>To get the same result as the step with the filter and select query paramer, you can type: isctl get compute physicalsummary --select "Name,Serial,Model" --filter "startswith(Name,'RTP91-FI6454-03-1')</p>
+<p>There are two – before select and filter parameter and it is case sensitive.</p>
+<p><img alt="image275.png" src="media/image275.png" /></p>
+<p><em>Figure 266</em></p>
+<p>To have the output in a certain order, you can use -o Name</p>
+<p><img alt="image276.png" src="media/image276.png" /></p>
+<p><em>Figure 267</em></p>
+<p>Different outputs are possible like yaml, json, csv, xlsx.</p>
+<p><img alt="image277.png" src="media/image277.png" /></p>
+<p><em>Figure 268</em></p>
+<p><img alt="image278.png" src="media/image278.png" /></p>
+<p><em>Figure 269</em></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="10-task-7-metrics.html" class="btn btn-neutral float-left" title="Task 7 - Metrics"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="12-bonus-task.html" class="btn btn-neutral float-right" title="Bonus Task">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="10-task-7-metrics.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="12-bonus-task.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

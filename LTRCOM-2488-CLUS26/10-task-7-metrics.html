@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>Task 7 - Metrics - LTRCOM-2488</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Task 7 - Metrics";
+        var mkdocs_page_input_path = "10-task-7-metrics.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="index.html" class="icon icon-home"> LTRCOM-2488
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="index.html">Front Matter</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="01-background.html">Background</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="02-scenario.html">Scenario</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="03-network-diagram.html">Network Diagram</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="04-task-1-lets-start-with-the-lab.html">Task 1 - Let's start with the lab!</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="05-task-2-configuring-fabric-interconnects.html">Task 2 - Configuring Fabric Interconnects</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="06-task-3-create-chassis-policy-template.html">Task 3 - Create Chassis Policy Template</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="07-task-4-inventory.html">Task 4 - Inventory</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="08-task-5-create-server-profile-template.html">Task 5 - Create Server Profile Template</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="09-task-6-deploying-server-profiles.html">Task 6 - Deploying Server Profiles</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Task 7 - Metrics</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#step-1-dashboard-metrics">Step 1: Dashboard Metrics</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-2-fabric-interconnect-dashboard-metrics">Step 2: Fabric Interconnect Dashboard Metrics</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-3-dashboard-server-metrics">Step 3: Dashboard Server Metrics</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-4-server-metrics">Step 4: Server Metrics</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-5-chassis-metrics">Step 5: Chassis Metrics</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-6-fabric-interconnect-metrics">Step 6: Fabric Interconnect Metrics</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-7-explorer">Step 7: Explorer</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="11-task-8-intersight-api.html">Task 8 - Intersight API</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="12-bonus-task.html">Bonus Task</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="13-the-end.html">The End</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">LTRCOM-2488</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html" class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Task 7 - Metrics</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="task-7-metrics">Task 7: Metrics</h1>
+<ul>
+<li>Cisco Intersight collects metrics for devices that are part of an Intersight Manage Mode (IMM) or UCSM Managed (UMM) domain. Only environmental metrics are collected for UMM devices. The collected metrics are then exposed as widgets on dashboards, and can also be analyzed using custom metrics explorations.</li>
+</ul>
+<h2 id="step-1-dashboard-metrics">Step 1: Dashboard Metrics</h2>
+<p>The main Dashboards page will show several Dashboards that can be added or removed to suit the particular account. In this account, these dashboards include various metrics and metric widgets. These metrics include Power &amp; Energy Metrics, Fabric Interconnects Metrics, and more.</p>
+<p><img alt="image217.png" src="media/image217.png" /></p>
+<p><em>Figure 208</em></p>
+<p>In this lab we will go over Power and Energy Metrics, Fabric Interconnects Metrics, and Servers Metrics.</p>
+<p><img alt="image218.png" src="media/image218.png" /></p>
+<p><em>Figure 209</em></p>
+<p>Take a look at this page and try to understand which values could be useful for your own environment. Would you like to know the overall Energy consumption for the account, or for just the Servers?</p>
+<p>Select Power &amp; Energy Metrics</p>
+<p>There are many different types of widgets. You can edit and add relavant widgets to the Dashboard as required.</p>
+<p><img alt="image219.png" src="media/image219.png" /></p>
+<p><em>Figure 210</em></p>
+<p><img alt="You can also modify the information for a given widget." src="media/image220.png" /></p>
+<p>You can also modify the information for a given widget.</p>
+<p><em>Figure 211</em></p>
+<h2 id="step-2-fabric-interconnect-dashboard-metrics">Step 2: Fabric Interconnect Dashboard Metrics</h2>
+<p><img alt="The Fabric Interconnects have many ports and network metrics can provide details about these ports. For example, you may be interested in checking for any network congestion." src="media/image221.png" /></p>
+<p>The Fabric Interconnects have many ports and network metrics can provide details about these ports. For example, you may be interested in checking for any network congestion.</p>
+<p>Figure 212</p>
+<p>Clicking on any FI port in the main view will take you to the Ports and Port Channels page for the respective Fabric Interconnect:</p>
+<p><img alt="image222.png" src="media/image222.png" /></p>
+<p>Figure 213</p>
+<p>Navigate back to the main Dashboards page. If you scroll down towards the bottom of the page, you will see several other useful widgets. For example, the widget below shows if there are any errors on any of the server ports.</p>
+<p><img alt="image223.png" src="media/image223.png" /></p>
+<p><em>Figure 214</em></p>
+<h2 id="step-3-dashboard-server-metrics">Step 3: Dashboard Server Metrics</h2>
+<p>The next Dashboard metrics we will cover are the Servers Metrics. The current dashboard shows only Temperature metrics, but just like other dashboards, additional widgets can be added as desired. The current widgets show the top 5 servers as they relate to both CPU temperature and ambient (inlet) temperature. This can be an easy way to see if a particular server is having thermal or cooling problems.</p>
+<p><img alt="image224.png" src="media/image224.png" /></p>
+<p><em>Figure 215</em></p>
+<p>You can modify the data displayed for the current widgets or add new widgets. To add a new widget, click the Add Widget button on the right hand side.</p>
+<p><img alt="image225.png" src="media/image225.png" /></p>
+<p><em>Figure 216</em></p>
+<p>Click the Servers checkbox, and explore the various other widgets related to Servers.</p>
+<p><img alt="image226.png" src="media/image226.png" /></p>
+<p><em>Figure 217</em></p>
+<h2 id="step-4-server-metrics">Step 4: Server Metrics</h2>
+<p>We are now going to explore metrics as they relate to a specific Compute device. Just like you can look at overall metrics for the entire account, there are metrics that can be explored for a single server.</p>
+<p>Let’s go back to Operate / Servers and select your server.</p>
+<p>On the bar, you see Metrics. Click it.</p>
+<p><img alt="image227.png" src="media/image227.png" /></p>
+<p><em>Figure 218</em></p>
+<p>Here the Host Power and Temperature are shown.</p>
+<p><img alt="image228.png" src="media/image228.png" /></p>
+<p><em>Figure 219</em></p>
+<p>Click on the icon next to the mini graphic of Host Power</p>
+<p><img alt="image229.png" src="media/image229.png" /></p>
+<p><em>Figure 220</em></p>
+<p>An exploded view is now visible.</p>
+<p>Change the Time Interval setting to last month.</p>
+<p><img alt="image230.png" src="media/image230.png" /></p>
+<p><em>Figure 221</em></p>
+<h2 id="step-5-chassis-metrics">Step 5: Chassis Metrics</h2>
+<p>The important metrics of a chassis are the Fan Speeds, and Power consumption.</p>
+<p>Select Chassis on the left and select a Chassis.</p>
+<p>Click on Metrics.</p>
+<p>For the chassis there are 28 metrics.</p>
+<p>See what metrics are useful for you.</p>
+<p><img alt="image231.png" src="media/image231.png" /></p>
+<p><em>Figure 222</em></p>
+<h2 id="step-6-fabric-interconnect-metrics">Step 6: Fabric Interconnect Metrics</h2>
+<p>Metrics for the Fabric Interconnect include thermals, power consumption, memory utilization and more. Navigate to the Operate / Fabric Interconnects section on the left and select a Fabric Interconnect.</p>
+<p>Click on Metrics.</p>
+<p><img alt="image232.png" src="media/image232.png" /></p>
+<p><em>Figure 223</em></p>
+<p>At the top, select Network Metrics</p>
+<p>The values of the network metrics are in Bps (Bytes per second) and not bps (bits per second).</p>
+<p><img alt="image233.png" src="media/image233.png" /></p>
+<p><em>Figure 224225</em></p>
+<h2 id="step-7-explorer">Step 7: Explorer</h2>
+<p>Intersight Metrics Explorer empowers you to aggregate and visualize various metrics that are collected for Fabric Interconnects, Chassis, and Servers that are managed as Intersight Managed Mode (IMM) or UCSM Managed Mode (UMM) domain in Cisco Intersight. You can use the Metrics Explorer queries to monitor your devices, optimize performance, identify bottlenecks, and proactively address any potential issues.</p>
+<p>Navigate to the Analyze / Explorer menu on the left side.</p>
+<p><img alt="image234.png" src="media/image234.png" /></p>
+<p><em>Figure 226</em></p>
+<p>Keep in mind, when you have the Advantage License Tier option, the data is collected every minute, but the granularity is still at 10 min.</p>
+<p><img alt="image235.png" src="media/image235.png" /></p>
+<p><em>Figure 227</em></p>
+<ul>
+<li>For the first metrics, we are selecting Host Power and Status – Host Power – Maximum</li>
+</ul>
+<p><img alt="image237.png" src="media/image237.png" /></p>
+<p><em>Figure 228</em></p>
+<ul>
+<li>Add a filter. Select Hostname and then Contains. Instead of selecting one device, click in the field and type: RTP91-FI6454-05-1(And hit enter)</li>
+</ul>
+<p><img alt="image238.png" src="media/image238.png" /></p>
+<p><em>Figure 229</em></p>
+<ul>
+<li>Click on “Group By” and select Host Name</li>
+<li>Select a time interval of Last Month to see nicer graphs.</li>
+<li>Here is the current result:</li>
+</ul>
+<p><img alt="image239.png" src="media/image239.png" /></p>
+<p><em>Figure 230</em></p>
+<ul>
+<li>lIf you want to have only the Top 5 shown, set the limit to 5</li>
+</ul>
+<p><img alt="image240.png" src="media/image240.png" /></p>
+<p><em>Figure 231</em></p>
+<p><img alt="image241.png" src="media/image241.png" /></p>
+<p><em>Figure 232</em></p>
+<ul>
+<li>Disable this metric (Slide next to “Host Power – Maximum” and Add Metric for a new metric.</li>
+</ul>
+<p><img alt="image242.png" src="media/image242.png" /></p>
+<p><em>Figure 233</em></p>
+<ul>
+<li>Select Network Interface – Operational Link Speed – Maximum</li>
+<li>Filter by: Host Type equals Fabric Interconnect</li>
+<li>Group by: Host Name</li>
+<li>Limit: 5.</li>
+</ul>
+<p><img alt="image243.png" src="media/image243.png" /></p>
+<p><em>Figure 234</em></p>
+<ul>
+<li>The result you see are in Bps (Bytes per Second.) This is for every network related metric. Keep this in mind that it is NOT bps (bits per second.)</li>
+<li>In this case the Max link is 25 GBps or 200 Gbps.</li>
+</ul>
+<p><img alt="image244.png" src="media/image244.png" /></p>
+<p><em>Figure 235</em></p>
+<ul>
+<li>To find the power usage of one chassis, you need to know the chassis identifier.</li>
+</ul>
+<p><img alt="image245.png" src="media/image245.png" /></p>
+<p><em>Figure 236</em></p>
+<ul>
+<li>One easy way to get this, is to go to the Chassis you want to know the details and select metrics.</li>
+<li>Go to Chassis / Select a Chassis / Click Metrics.</li>
+<li>Look for the Power with PSU1 as Endpoint.</li>
+<li>Expand it and click on View in Explorer</li>
+</ul>
+<p><img alt="image246.png" src="media/image246.png" /></p>
+<p><em>Figure 237</em></p>
+<ul>
+<li>In Explorere you will see Power- Average, Power-Minimum and Power- Maximum.</li>
+<li>Delete the first two by clicking on the garbage bin.</li>
+<li>Click on Filter By and you will see;</li>
+</ul>
+<p><img alt="image247.png" src="media/image247.png" /></p>
+<p><em>Figure 238</em></p>
+<ul>
+<li>The right Identifier is now chosen, but there is only one PSU and we want to have all PSUs to see the power consumption of the chassis.</li>
+<li>Remove the Name = PSU1 and type in that field Name. Then select name and select contains.</li>
+</ul>
+<p><img alt="image248.png" src="media/image248.png" /></p>
+<p><em>Figure 239</em></p>
+<ul>
+<li>Instead of choosing a PSU from the list, type PSU and hit enter.</li>
+</ul>
+<p><img alt="image249.png" src="media/image249.png" /></p>
+<p><em>Figure 240</em></p>
+<ul>
+<li>Now you see the power consumption of the total chassis.</li>
+</ul>
+<p><img alt="image250.png" src="media/image250.png" /></p>
+<p><em>Figure 241</em></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="09-task-6-deploying-server-profiles.html" class="btn btn-neutral float-left" title="Task 6 - Deploying Server Profiles"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="11-task-8-intersight-api.html" class="btn btn-neutral float-right" title="Task 8 - Intersight API">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="09-task-6-deploying-server-profiles.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="11-task-8-intersight-api.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

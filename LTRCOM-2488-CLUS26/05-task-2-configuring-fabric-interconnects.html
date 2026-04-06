@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>Task 2 - Configuring Fabric Interconnects - LTRCOM-2488</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Task 2 - Configuring Fabric Interconnects";
+        var mkdocs_page_input_path = "05-task-2-configuring-fabric-interconnects.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="index.html" class="icon icon-home"> LTRCOM-2488
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="index.html">Front Matter</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="01-background.html">Background</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="02-scenario.html">Scenario</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="03-network-diagram.html">Network Diagram</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="04-task-1-lets-start-with-the-lab.html">Task 1 - Let's start with the lab!</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Task 2 - Configuring Fabric Interconnects</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#ucs-domain-policy">UCS Domain Policy</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-5-create-vsan">Step 5: Create VSAN</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="06-task-3-create-chassis-policy-template.html">Task 3 - Create Chassis Policy Template</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="07-task-4-inventory.html">Task 4 - Inventory</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="08-task-5-create-server-profile-template.html">Task 5 - Create Server Profile Template</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="09-task-6-deploying-server-profiles.html">Task 6 - Deploying Server Profiles</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="10-task-7-metrics.html">Task 7 - Metrics</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="11-task-8-intersight-api.html">Task 8 - Intersight API</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="12-bonus-task.html">Bonus Task</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="13-the-end.html">The End</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">LTRCOM-2488</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html" class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Task 2 - Configuring Fabric Interconnects</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="task-2-configuring-fabric-interconnects">Task 2: Configuring Fabric Interconnects</h1>
+<h2 id="ucs-domain-policy">UCS Domain Policy</h2>
+<p>One of the first steps is to Claim a Target. Once a target is claimed, it will be visible from Intersight. During this lab, we are not going over the procedure to claim a target.</p>
+<p>Once the FI is claimed, a UCS Domain Profile will need to be created. In this lab, UCS Domain Profiles are already created and assigned to the FIs.</p>
+<p>Below is an overview of the Domain and Chassis profile and what you can configure.</p>
+<p><img alt="image26.png" src="media/image26.png" /></p>
+<p><em>Figure 23</em></p>
+<p>We are going over the steps to configure a UCS Domain Profile Template and create a UCS Domain Profile from this to give you a look and feel. PLEASE DO NOT ASSIGN YOUR TEMPLATE TO A FABRIC INTERCONNECT! This will be disruptive for you and all other participants.</p>
+<p>Step 1: From Intersight, navigate to the Templates section on the left under Configure, select the UCS Domain Profile Templates tab, and then select Create UCS Domain Profile Template:</p>
+<p><img alt="image28.png" src="media/image28.png" /></p>
+<p><em>Figure 24</em></p>
+<p>Create an unique name using your assigned pod information for the template, provide a unique tag, and select Next:</p>
+<p><img alt="image29.png" src="media/image29.png" /></p>
+<p><em>Figure 25</em></p>
+<p>Step 2: After having entered a name for the Profile Template, let’s configure the VLAN and VSAN for Fabric Interconnect A and B. In the VLAN &amp; VSAN Configuration step, click Select Policy for Fabric Interconnect A’s VLAN Configuration:</p>
+<p><img alt="image30.png" src="media/image30.png" /></p>
+<p><em>Figure 26</em></p>
+<p>Create a new VLAN Policy.</p>
+<p><img alt="image31.png" src="media/image31.png" /></p>
+<p><em>Figure 27</em></p>
+<p>Give the VLAN Policy an unique name associated with your Pod, set the tag, and select Next:</p>
+<p><img alt="image32.png" src="media/image32.png" /></p>
+<p><em>Figure 28</em></p>
+<p>There is only VLAN 1 (the default VLAN) in this configuration and for the lab we are using VLAN 70. Click Add VLANs:</p>
+<p><img alt="image33.png" src="media/image33.png" /></p>
+<p><em>Figure 29</em></p>
+<p>Fill in the prefix with a prefix for the VLAN name and use the VLAN ID 70. Click Select Policy for the Multicast Policy and then click Create Policy when prompted to select policy</p>
+<p><img alt="image34.png" src="media/image34.png" /></p>
+<p><em>Figure 30</em></p>
+<p>Provide a new Multicast Policy a name, a tag, and click Next:</p>
+<p><img alt="image35.png" src="media/image35.png" /></p>
+<p><em>Figure 31</em></p>
+<p>The default parameters are for the majority of UCS Customers. A Multicast Policy must be attached to all created VLANs. We will not be changing the settings for this lab, but below are some best practices for these policy details:</p>
+<ul>
+<li>IGMP Snooping is needed to have the FI correctly populate Multicast Groups.</li>
+<li>Querier State must be enabled if the upstream TOR/EOR Switch does not provide multicast querier service. If enabled, you must provide IPv4 addresses for the Querier and Peer.</li>
+<li>Disable Source IP Proxy when the upstream Firewall or Switch does not accept FI Source IP Proxy.</li>
+</ul>
+<p><img alt="image36.png" src="media/image36.png" /></p>
+<p><em>Figure 32</em></p>
+<p>Click Create.</p>
+<p>Now you should see the Multicast Policy you just created as shown below:</p>
+<p><img alt="image37.png" src="media/image37.png" /></p>
+<p><em>Figure 33</em></p>
+<p>Now click Add.</p>
+<p>Depending on how the current network is configured, a Native VLAN ID can be set if necessary. Click Create:</p>
+<p><img alt="image38.png" src="media/image38.png" /></p>
+<p><em>Figure 34</em></p>
+<p>For the Fabric Interconnect B we can choose the same VLAN-Policy which we create for Fabric Interconnect A. Click Select Policy for Fabric Interconnect B’s VLAN Configuration select the radio button for the policy you created in the previous step and click Select:</p>
+<p><img alt="image39.png" src="media/image39.png" /></p>
+<p><em>Figure 35</em></p>
+<h2 id="step-5-create-vsan">Step 5: Create VSAN</h2>
+<p>When VSAN is being used, it is normal to have a separate VSAN-A and a VSAN-B. Because of this, two different VSAN Configuration Policies should be created. For Fabric Interconnect A, click Select Policy next to the VSAN configuration as shown below:</p>
+<p><img alt="image40.png" src="media/image40.png" /></p>
+<p><em>Figure 36</em></p>
+<p>Now click Create Policy to create a new VSAN Policy and make sure there is a different in the name between VSAN-A and VSAN-B policy. After providing the name and tag information, click Next:</p>
+<p><img alt="image41.png" src="media/image41.png" /></p>
+<p><em>Figure 37</em></p>
+<p>Now click Add VSAN as shown below:</p>
+<p><img alt="image42.png" src="media/image42.png" /></p>
+<p><em>Figure 38</em></p>
+<p>In the name field, type VSAN700, select Uplink as VSAN Scope, type 700 in the VSAN ID field, and use 710 for the FCoE VLAN ID as shown below:</p>
+<p><img alt="image43.png" src="media/image43.png" /></p>
+<p><em>Figure 39</em></p>
+<p>Click Add to return to the Policy Details screen and then click Create.</p>
+<p>The next step is the Create a new VSAN Policy for VSAN-B. For Fabric Interconnect B, click Select Policy next to the VSAN configuration as we did with Fabric Interconnect A. Now click Create Policy to create a new VSAN Policy and use a different name for the VSAN-B policy. After providing the name and tag information, click Next. Now click Add VSAN; in the name field, type VSAN701, select Uplink as VSAN Scope, type 701 in the VSAN ID field, and use 711 for the FCoE VLAN ID. Click Add, then click Create. Intersight should now should now see a screen similar to the image below:</p>
+<p><img alt="image44.png" src="media/image44.png" /></p>
+<p><em>Figure 40</em></p>
+<p>Click Next to proceed to the Ports Configuration step. Below are several Best Practices to consider for port configurations:</p>
+<ul>
+<li>Plan FC ports ahead.</li>
+<li>Two different Port configurations are needed when using VSAN-A and VSAN-B</li>
+<li>Even if you don’t have FC initial, having two different Port configurations is still better to minimize impact of changes.</li>
+<li>Define the break-out ports in advance.</li>
+</ul>
+<p>Step 6: Create two different Port Configuration Policies.</p>
+<p>From the Ports Configuration step, click Select Policy for Fabric Interconnect A:</p>
+<p><img alt="image45.png" src="media/image45.png" /></p>
+<p><em>Figure 41</em></p>
+<p>Click Create Policy:</p>
+<p><img alt="image46.png" src="media/image46.png" /></p>
+<p><em>Figure 42</em></p>
+<p>Give the policy a name, ensure the FI 6454 is the model selected, provide a tag, then click Next:</p>
+<p><img alt="image47.png" src="media/image47.png" /></p>
+<p><em>Figure 43</em></p>
+<p>This lab environment is not leveraging Fibre Channel but we will configure the first four ports to be FC Ports for demonstration purposes. Under the Unified Ports step, move the slider so that the first four ports on the FI are selected as shown in the image below:</p>
+<p><img alt="image48.png" src="media/image48.png" /></p>
+<p><em>Figure 44</em></p>
+<p>Click Next</p>
+<p>In the next step, you can configure Port 49 as a breakout port, although it is just for practice. Under the Ethernet tab, select port 49 and click Configure:</p>
+<p><img alt="image49.png" src="media/image49.png" /></p>
+<p><em>Figure 45</em></p>
+<p>On the Set Breakout prompt, select the radio button for 4x25G and click Set:</p>
+<p><img alt="image50.png" src="media/image50.png" /></p>
+<p><em>Figure 46</em></p>
+<p>Click Next.</p>
+<p>In the Port Roles step, select ports 5 through 48 and click Configure.</p>
+<p><img alt="image51.png" src="media/image51.png" /></p>
+<p><em>Figure 47</em></p>
+<p>Select Server from the Role drop down prompt, leave the FEC set to Auto, and click Save:</p>
+<p><img alt="image52.png" src="media/image52.png" /></p>
+<p><em>Figure 48</em></p>
+<p>From the Port Roles step, select the first four ports and click Configure:</p>
+<p><img alt="image53.png" src="media/image53.png" /></p>
+<p><em>Figure 49</em></p>
+<p>Select FC Uplink from the Role drop down prompt, Set the Admin Speed to 32Gbps, and click Save These ports are FC Uolinks with a speed of 32 Gbps, set the VSAN ID to 700 as we are configuring Fabric Interconnect A, and click Save:</p>
+<p><img alt="image54.png" src="media/image54.png" /></p>
+<p><em>Figure 50</em></p>
+<p>Best Practices:</p>
+<ul>
+<li>Always create a port channel, even if there is only one uplink. This way you can easily add more physical connections between the FI and switch.</li>
+<li>Select the Port Channels tab and click Create Port Channel.</li>
+</ul>
+<p><img alt="image55.png" src="media/image55.png" /></p>
+<p><em>Figure 51</em></p>
+<p>Best Practices:</p>
+<ul>
+<li>Unless configuring Disjoint Layer 2 or Appliance Uplink Ports – Do not use the Ethernet Network Group Domain Policy on the Uplink Ports/Port Channels within the Domain Port Policy. Simply leave this policy selection blank (unselected)</li>
+<li>From the Create Port Channel screen, provide a Port Channel ID. Best practice is to have this port channel ID the same as on the switch. This makes troubleshooting easier. For now you can use 10 or any other number. Click Select Policy for the Flow Control Policy section and then click Create Policy. Again: Do not use the Ethernet Network Group Domain Policy.</li>
+</ul>
+<p><img alt="image56.png" src="media/image56.png" /></p>
+<p><em>Figure 52</em></p>
+<ul>
+<li>Provide a name, set the tag, and click Next:</li>
+</ul>
+<p><img alt="image57.png" src="media/image57.png" /></p>
+<p><em>Figure 53</em></p>
+<p>Best Practices:</p>
+<ul>
+<li>Use Priority Flow Control (PFC) when there is a need to have no-drop behavior propagated to upstream LAN/IP-SAN network. Within the UCS server ports, PFC is always on and there is no need of flow control config on these ports (Lossless Behavior)</li>
+<li>Ensure the Auto radio button is selected and click Create:</li>
+</ul>
+<p><img alt="image58.png" src="media/image58.png" /></p>
+<p><em>Figure 54</em></p>
+<p>This should now be the current policy selected:</p>
+<p><img alt="image59.png" src="media/image59.png" /></p>
+<p><em>Figure 55</em></p>
+<p>Create a new Link Aggregation Policy by clicking Select Policy and then Create Policy when prompted. Provide a name, set the tag, then click Next:</p>
+<p><img alt="image60.png" src="media/image60.png" /></p>
+<p><em>Figure 56</em></p>
+<p>Best Practices:</p>
+<ul>
+<li>Recommended settings are the default (False/Normal)</li>
+<li>This would direct the FI to NOT suspend Uplink Port-Channel Members and to keep sending PDUs at the Normal Rate…thus allowing the LACP Enabled Upstream Switch to control port suspension based on not receiving LACP PDUs and other error conditions.</li>
+<li>Note: Majority of UCS FI’s are in Ethernet End-Host Mode, and majority of next-hop switches, N9K for example, have default behavior of suspending individual member ports of a port-channel if it does not receive PDUs on that port</li>
+</ul>
+<p>Leave the Suspend Individual set to False and the LACP rate set to Normal. then click Create.</p>
+<p><img alt="image61.png" src="media/image61.png" /></p>
+<p><em>Figure 57</em></p>
+<p>Next create a Link Control Policy by selecting Select Policy and Create Policy when prompted:</p>
+<p><img alt="image62.png" src="media/image62.png" /></p>
+<p><em>Figure 58</em></p>
+<p>Provide a name, set the tag, then click Next:</p>
+<p><img alt="image63.png" src="media/image63.png" /></p>
+<p><em>Figure 59</em></p>
+<p>Best Practices:</p>
+<ul>
+<li>Link Control Policy with UDLD Admin State ‘ON’ should be enabled only when the links on UCS FIs connects to UDLD capable interfaces. Supported interface types are – Ethernet uplink, FCoE uplink, Ethernet uplink port-channel members &amp; FCoE uplink port-channel members. UDLD mode (Normal or Aggressive) settings must be configured the same on both sides of the link.</li>
+</ul>
+<p>Leave the configuration as is and click Create:</p>
+<p><img alt="image64.png" src="media/image64.png" /></p>
+<p><em>Figure 60</em></p>
+<p>From the Create Port screen, select ports 53 and 54 as members of the port-channel and click Save.</p>
+<p><img alt="image65.png" src="media/image65.png" /></p>
+<p><em>Figure 61</em></p>
+<p>Below is an example of how the Port Channel will look when it is configured:</p>
+<p><img alt="image66.png" src="media/image66.png" /></p>
+<p><em>Figure 62</em></p>
+<p>Now click Save.</p>
+<p>Verify the ports and port channels by clicking on it and see if it is correct.</p>
+<p><img alt="image67.png" src="media/image67.png" /></p>
+<p><em>Figure 63</em></p>
+<p>Now create a Port Policy for Fabric Interconnect B.</p>
+<p>In the lab guide, follow the steps performed for creating a Port Policy on Fabric Interconnect A. This is an opportunity to repurpose the Flow Control Policy, Link Aggregation Policy, and Link Control Policy created earlier. When you reach the FC port configuration, use Fabric Interconnect B’s VSAN ID for the first four FC ports instead</p>
+<p>:</p>
+<p><img alt="image68.png" src="media/image68.png" /></p>
+<p><em>Figure 64</em></p>
+<p>This is how is looks when both Fabric Interconnects has the port policy. From here, click Next:</p>
+<p><img alt="image69.png" src="media/image69.png" /></p>
+<p><em>Figure 65</em></p>
+<p>We are now going to create the UCS Domain Configuration of the Domain Profile Template.</p>
+<p><img alt="image70.png" src="media/image70.png" /></p>
+<p><em>Figure 66</em></p>
+<p>There are four Management and two Network Policies:</p>
+<p><img alt="image71.png" src="media/image71.png" /></p>
+<p><em>Figure 67</em></p>
+<p>Under Management, create the NTP Policy by clicking Select Policy next to NTP and then click Create Policy. Provide a name, set the tag, and click Next:</p>
+<p><img alt="image72.png" src="media/image72.png" /></p>
+<p><em>Figure 68</em></p>
+<p>You can create an NTP Policy just for UCS Domain or create one for All Platforms. For this lab, create it under the All Platforms tab. In the NTP Server field, input 172.20.10.10 and select America/Los_Angeles as Timezone, then click Create:</p>
+<p><img alt="image73.png" src="media/image73.png" /></p>
+<p><em>Figure 69</em></p>
+<p>Now create a Syslog Policy by clicking Select Policy next to Syslog and then click Create Policy. Provide a name, set the tag, and click Next:</p>
+<p><img alt="image74.png" src="media/image74.png" /></p>
+<p><em>Figure 70</em></p>
+<p>Select the UCS Domain tab, input 172.20.70.1 in Syslog Server 1’s Hostname/IP Address field, set the Minimum Severity to Report drop down option to Alert and then click Create:</p>
+<p><img alt="image75.png" src="media/image75.png" /></p>
+<p><em>Figure 71</em></p>
+<p>Next create the Network Connectivity Policy by clicking Select Policy next to Network Connectivity and then click Create Policy. Provide a name, set the tag, and click Next:</p>
+<p><img alt="image76.png" src="media/image76.png" /></p>
+<p><em>Figure 72</em></p>
+<p>Select the UCS Domain tab, fill in the DNS Server information as shown in the screenshot below and click Create:</p>
+<p><img alt="image77.png" src="media/image77.png" /></p>
+<p><em>Figure 73</em></p>
+<p>Create the SNMP Policy by clicking Select Policy next to SNMP and then click Create Policy. Provide a name, set the tag, and click Next:</p>
+<p><img alt="image78.png" src="media/image78.png" /></p>
+<p><em>Figure 74</em></p>
+<p>Select the UCS Domain tab and can fill in the required fields and click Create:</p>
+<p><img alt="image79.png" src="media/image79.png" /></p>
+<p><em>Figure 75</em></p>
+<p>Depending on your situation, you can add SNMP Users, authentication etc.</p>
+<p>Best Practices</p>
+<ul>
+<li>Consult the administrator for SNMP within your organization and then create the SNMP Policy to match the SNMP Version, SNMP Manager (Trap Destination) and User Account/Password</li>
+<li>Recommend using SNMP v3, Most Secure</li>
+<li>Reference: Cisco Intersight Managed Mode SNMP Monitoring Guide</li>
+</ul>
+<p>Create the System Qos Policy by clicking Select Policy next to System QoS and then click Create Policy. Provide a name, set the tag, and click Next:</p>
+<p><img alt="image80.png" src="media/image80.png" /></p>
+<p><em>Figure 76</em></p>
+<p>In the screenshot below, everything is enabled and as you can see, you can change the parameters if needed. You can enable Jumbo MTU and eventhough the MTU size is 9000, you can set it on the Fabric Interconnect to 9216, because of the overhead of some protocols. Click Create:</p>
+<p><img alt="image81.png" src="media/image81.png" /></p>
+<p><em>Figure 77</em></p>
+<p>Create a new Switch Control Policy by clicking Select Policy next to Switch Control and then click Create Policy. Provide a name, set the tag, and click Next:</p>
+<p><img alt="image82.png" src="media/image82.png" /></p>
+<p><em>Figure 78</em></p>
+<p>Leave the Switching Mode to End Host Mode as shown below:</p>
+<p><img alt="image83.png" src="media/image83.png" /></p>
+<p><em>Figure 79</em></p>
+<p>If a Fibre Channle connection goes down, a RSCN is sent to the VIC Adapter as shown in this description:</p>
+<p><img alt="image84.png" src="media/image84.png" /></p>
+<p><em>Figure 80</em></p>
+<p>Scroll down and toggle the switch to Enable the fabric port-channel vHBA reset as shown below and the click Create:</p>
+<p><img alt="image85.png" src="media/image85.png" /></p>
+<p><em>Figure 81</em></p>
+<p>Click Next to finish the Domain Profile is creation. Now click Derive Profiles:</p>
+<p><img alt="image86.png" src="media/image86.png" /></p>
+<p><em>Figure 82</em></p>
+<p>Click Assign Later, ensure 1 is the number of Profiles to derive, and click Next:</p>
+<p><img alt="image87.png" src="media/image87.png" /></p>
+<p><em>Figure 83</em></p>
+<p>Now you can change the name of the profile that will be derived. Make it unique (preferably with your Lab Pod) and click Next:</p>
+<p><img alt="image88.png" src="media/image88.png" /></p>
+<p><em>Figure 84</em></p>
+<p>Now you are presented with the summary.From this screen, click Derive:</p>
+<p><img alt="image89.png" src="media/image89.png" /></p>
+<p><em>Figure 85</em></p>
+<p>To verify if there is a UCS Domain Profile created from the template, go to Profiles (On the left.)</p>
+<p><img alt="image90.png" src="media/image90.png" /></p>
+<p><em>Figure 86</em></p>
+<p>Click on the UCS Domain Profiles tab and if it was derived correctly, you will see your Domain Profile. DO NOT ASSIGN THIS PROFILE TO ANY DOMAIN as the lab will be disrupted for 8 participants if assigned.</p>
+<p><img alt="image91.png" src="media/image91.png" /></p>
+<p><em>Figure 87</em></p>
+<p>There may be other UCS Domain Profiles in the list that were created by the proctors, do not modify any profiles:</p>
+<p><img alt="image92.png" src="media/image92.png" /></p>
+<p><em>Figure 88</em></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="04-task-1-lets-start-with-the-lab.html" class="btn btn-neutral float-left" title="Task 1 - Let's start with the lab!"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="06-task-3-create-chassis-policy-template.html" class="btn btn-neutral float-right" title="Task 3 - Create Chassis Policy Template">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="04-task-1-lets-start-with-the-lab.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="06-task-3-create-chassis-policy-template.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

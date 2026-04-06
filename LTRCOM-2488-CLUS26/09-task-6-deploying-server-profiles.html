@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>Task 6 - Deploying Server Profiles - LTRCOM-2488</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Task 6 - Deploying Server Profiles";
+        var mkdocs_page_input_path = "09-task-6-deploying-server-profiles.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="index.html" class="icon icon-home"> LTRCOM-2488
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="index.html">Front Matter</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="01-background.html">Background</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="02-scenario.html">Scenario</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="03-network-diagram.html">Network Diagram</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="04-task-1-lets-start-with-the-lab.html">Task 1 - Let's start with the lab!</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="05-task-2-configuring-fabric-interconnects.html">Task 2 - Configuring Fabric Interconnects</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="06-task-3-create-chassis-policy-template.html">Task 3 - Create Chassis Policy Template</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="07-task-4-inventory.html">Task 4 - Inventory</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="08-task-5-create-server-profile-template.html">Task 5 - Create Server Profile Template</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Task 6 - Deploying Server Profiles</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#task-5-install-operation-system">Task 5: Install Operation System</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-1-install-os">Step 1: Install OS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-2-server-inventory-after-os-installation">Step 2: Server Inventory after OS Installation</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="10-task-7-metrics.html">Task 7 - Metrics</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="11-task-8-intersight-api.html">Task 8 - Intersight API</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="12-bonus-task.html">Bonus Task</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="13-the-end.html">The End</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">LTRCOM-2488</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html" class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Task 6 - Deploying Server Profiles</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="task-6-deploying-server-profiles">Task 6: Deploying Server Profiles</h1>
+<p>Now that we have a UCS Server Profile Template, and we have derived a server profile from it, we can assign it to a physical server.</p>
+<p>On the left side of your screen, navigate to Configure -&gt; Profiles and you will see the status Not Deployed next to your server:</p>
+<p><img alt="image189.png" src="media/image189.png" /></p>
+<p><em>Figure 180</em></p>
+<p>Click the three dots on the right and click on Deploy:</p>
+<p><img alt="image190.png" src="media/image190.png" /></p>
+<p><em>Figure 181</em></p>
+<p>A warning message will appear. Select Reboot Immediately to Activate and then click Deploy:</p>
+<p><img alt="image191.png" src="media/image191.png" /></p>
+<p><em>Figure 182</em></p>
+<p>A green message will appear for a couple of seconds in the browser.</p>
+<p><img alt="image192.png" src="media/image192.png" /></p>
+<p><em>Figure 183</em></p>
+<p>Click on the checkmark icon at the top of the browser to see the status:</p>
+<p><img alt="image193.png" src="media/image193.png" /></p>
+<p><em>Figure 184</em></p>
+<p>If you click Deploy Server Profile, you see a bit more information:</p>
+<p><img alt="image194.png" src="media/image194.png" /></p>
+<p><em>Figure 185</em></p>
+<p>Go back to the server profiles and you see the validation state.</p>
+<p><img alt="image195.png" src="media/image195.png" /></p>
+<p><em>Figure 186</em></p>
+<p>If you see a checkmark at the top and you only see “Validating”, just click templates and go back to Profiles:</p>
+<p><img alt="image196.png" src="media/image196.png" /></p>
+<p><em>Figure 187</em></p>
+<p>After a while you will see the status Activating:</p>
+<p><img alt="image197.png" src="media/image197.png" /></p>
+<p><em>Figure 188</em></p>
+<p>Have a nice break and ask questions to the proctors. They are here for you. After about 15-20 minutes, the server profile is deployed and you will see OK.</p>
+<p><img alt="image198.png" src="media/image198.png" /></p>
+<p><em>Figure 189</em></p>
+<p>If you see a Failed status, click on it and investigate what the problem is.</p>
+<p>The proctors can help you.</p>
+<p><img alt="image199.png" src="media/image199.png" /></p>
+<p><em>Figure 190</em></p>
+<h3 id="task-5-install-operation-system">Task 5: Install Operation System</h3>
+<p>Start with this task only when your Server Profile is deployed on your server and has the status OK.</p>
+<p>There are different ways to install an operating system on a server:</p>
+<ul>
+<li>KVM console</li>
+<li>Mount a local ISO and boot to it</li>
+<li>software repository</li>
+</ul>
+<p>In the next steps, we will install the OS on the server via the “Install Operating System” option.</p>
+<p>There are several ISOs in the software repository. This can be found under System / Software Repository:</p>
+<p><img alt="image200.png" src="media/image200.png" /></p>
+<p><em>Figure 191</em></p>
+<h2 id="step-1-install-os">Step 1: Install OS</h2>
+<p>Navigate to Operate -&gt; Server, click the three dots found to the right side of the screen next to your server, and select Install Operating System:</p>
+<p><img alt="image201.png" src="media/image201.png" /></p>
+<p><em>Figure 192</em></p>
+<p>Make sure only your server is selected and click Next:</p>
+<p><img alt="image202.png" src="media/image202.png" /></p>
+<p><em>Figure 193</em></p>
+<p>Select the RHEL OS image and click Next:</p>
+<p><img alt="image203.png" src="media/image203.png" /></p>
+<p><em>Figure 194</em></p>
+<p>Do not change the “Select Configuration Source’</p>
+<p>Change the IP configuration to DHCP, fill in the hostname with your Server ID, use UCSX@Cisco123 as the password, and click Next:</p>
+<p><img alt="image204.png" src="media/image204.png" /></p>
+<p><em>Figure 195</em></p>
+<p>This method needs SCU to install the OS. For this lab, the SCU image is already uploaded. Select the SCU and click Next.</p>
+<p><img alt="image205.png" src="media/image205.png" /></p>
+<p><em>Figure 196</em></p>
+<p>Depening on the server configuration, there are multiple ways to install the OS on a disk. For this lab, configure the installation target to use the M.2 drives and click Next:</p>
+<p><img alt="image206.png" src="media/image206.png" /></p>
+<p><em>Figure 197</em></p>
+<p>The view you have right now is the summary. Click on View Details for a bit more information.</p>
+<p><img alt="image207.png" src="media/image207.png" /></p>
+<p><em>Figure 198</em></p>
+<p>Click Install, then click Install again on the warning message:</p>
+<p><img alt="image208.png" src="media/image208.png" /></p>
+<p><em>Figure 199</em></p>
+<p>The installation will start.</p>
+<p><img alt="image209.png" src="media/image209.png" /></p>
+<p><em>Figure 200</em></p>
+<p>To view the progress, you can click the checkmark at the bar or og the the server KVM Console.</p>
+<p>Go to the Server view and select the three dots to the right of your server. Select Launch Tunneled vKVM. This features doesn’t require a VPN connection to the network where the server is located.</p>
+<p><img alt="image210.png" src="media/image210.png" /></p>
+<p><em>Figure 201</em></p>
+<p>Another web browser tab is opened. It is possible you won’t see anything for a couple of minutes. The total installation can take between 45 and 60 minutes. Feel free to proceed with the rest of the lab and come back later for further review.</p>
+<p>Below is an example of what you should see in the KVM window once the OS is installed. Note the servername and IP address (should be in the range of 172.20.70.x/24)</p>
+<p><img alt="image211.png" src="media/image211.png" /></p>
+<p><em>Figure 202</em></p>
+<h2 id="step-2-server-inventory-after-os-installation">Step 2: Server Inventory after OS Installation</h2>
+<p>Now that the server has a profile and the OS is installed, let’s go back to the server and have a closer look at what more information you will see right now.</p>
+<p>Click on Servers and select your server. This will direct you to the general properties of the server:</p>
+<p><img alt="image212.png" src="media/image212.png" /></p>
+<p><em>Figure 203</em></p>
+<p>Click on HCL. The server software compliance should show incomplete. The OS was installed, but the drivers weren’t installed. Click Get Recommended Drivers:</p>
+<p><img alt="image213.png" src="media/image213.png" /></p>
+<p><em>Figure 204</em></p>
+<p>Select OS Vendor: Red Hat and the OS Version is 9.3. Intersight will show the recommended driver versions and will provide a link for downloading the driver ISO. We will not download the ISO for this lab. Click Close:</p>
+<p><img alt="image214.png" src="media/image214.png" /></p>
+<p><em>Figure 205</em></p>
+<p>Click the Topology tab. Prior to deploying a server profile, an image of the FIs and IFMs were displayed but now that a Server Profile and OS have been deployed to the server, you see the vNICs connection to the IFM:</p>
+<p><img alt="image215.png" src="media/image215.png" /></p>
+<p><em>Figure 206</em></p>
+<p>Now click the Connectivity tab. This should display vETH0 and vETH1 are up and running but vHBA-A and vHBA-B are down:</p>
+<p><img alt="image216.png" src="media/image216.png" /></p>
+<p><em>Figure 207</em></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="08-task-5-create-server-profile-template.html" class="btn btn-neutral float-left" title="Task 5 - Create Server Profile Template"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="10-task-7-metrics.html" class="btn btn-neutral float-right" title="Task 7 - Metrics">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="08-task-5-create-server-profile-template.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="10-task-7-metrics.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

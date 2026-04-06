@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>Task 5 - Create Server Profile Template - LTRCOM-2488</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Task 5 - Create Server Profile Template";
+        var mkdocs_page_input_path = "08-task-5-create-server-profile-template.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="index.html" class="icon icon-home"> LTRCOM-2488
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="index.html">Front Matter</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="01-background.html">Background</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="02-scenario.html">Scenario</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="03-network-diagram.html">Network Diagram</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="04-task-1-lets-start-with-the-lab.html">Task 1 - Let's start with the lab!</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="05-task-2-configuring-fabric-interconnects.html">Task 2 - Configuring Fabric Interconnects</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="06-task-3-create-chassis-policy-template.html">Task 3 - Create Chassis Policy Template</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="07-task-4-inventory.html">Task 4 - Inventory</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Task 5 - Create Server Profile Template</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#step-1-vnic-template">Step 1: vNIC Template</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-2-vhba-template">Step 2: vHBA Template</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-3-ucs-server-profile-template">Step 3: UCS Server Profile Template</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="09-task-6-deploying-server-profiles.html">Task 6 - Deploying Server Profiles</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="10-task-7-metrics.html">Task 7 - Metrics</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="11-task-8-intersight-api.html">Task 8 - Intersight API</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="12-bonus-task.html">Bonus Task</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="13-the-end.html">The End</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">LTRCOM-2488</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html" class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Task 5 - Create Server Profile Template</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="task-5-create-server-profile-template">Task 5: Create Server Profile Template</h1>
+<p>A server profile contains all the identifiers and settings which makes the server unique. Creating a Server Profile Template allows multiple Server Profiles to be derived from the template and each Server Profile will have the same settings as the template. For example, if the template uses a specific BIOS Policy, then all the derived server profiles will also apply the settings from that BIOS Policy.</p>
+<p>The image below is an overview of the policies used in a Server Profile Template:</p>
+<p><img alt="image121.png" src="media/image121.png" /></p>
+<p><em>Figure 117</em></p>
+<p>Before we begin creating a Server Profile Template, we will create a vNIC template and vHBA template.</p>
+<h2 id="step-1-vnic-template">Step 1: vNIC Template</h2>
+<p>In Intersight select Templates under the Configure section on the left side of the window. Select the vNIC Templates tab and then select Create vNIC Template:</p>
+<p><img alt="image123.png" src="media/image123.png" /></p>
+<p><em>Figure 118</em></p>
+<p>Provide a name, set the tag, and click Next:</p>
+<p><img alt="image124.png" src="media/image124.png" /></p>
+<p><em>Figure 119</em></p>
+<p>Traditionally there may be two or more templates created and the admin might add an “A” or “B” to the name to see over which Fabric Interconnect the traffic will go, for example podX-vNIC-template-A and podX-vNIC-template-B. Click on Select Pool for the MAC Pool, and select create Create Pool to create a new MAC Address Pool.</p>
+<p>Provide a name, set the tag, and click Next:</p>
+<p><img alt="image125.png" src="media/image125.png" /></p>
+<p><em>Figure 120</em></p>
+<p>Use the prefix of 00:25:B5 for the first three octets, then your pod number for the fourth octet followed by zeroes in this format: 00:25:B5:XX:00:00 (see example below). Set the size to 16 and click Create:</p>
+<p><img alt="image126.png" src="media/image126.png" /></p>
+<p><em>Figure 121</em></p>
+<p>This template will be for traffic that is going over Fabric Interconnect A. Ensure Switch ID is set to A.</p>
+<p>If the Switch ID is B, the traffic is going over Fabric Interconnect B.</p>
+<p>An available option is to allow the UCS Hardware to do the failover of the vNIC traffic between Fabrics A and B. Failover in the hardware can have advantages, but for many solutions we create two vNICs so the OS will have two interfaces with each going over one side of the UCS fabric.</p>
+<p>Ensure Failover is Enabled (This will save time in the lab by not having to create another vNIC template for the other Fabric Interconnect):</p>
+<p><img alt="image127.png" src="media/image127.png" /></p>
+<p><em>Figure 122</em></p>
+<p>When Failover is enabled we create only one vNIC and the OS only sees one interface. When there is a failover of the Fabric Interconnect, the traffic will switch to the other Fabric Interconnect and the OS won’t know about this event.</p>
+<p>Now click Select Policies for the Ethernet Network Group, select Create Policy, provide a name, set the tag, and click Next:</p>
+<p><img alt="image128.png" src="media/image128.png" /></p>
+<p><em>Figure 123</em></p>
+<p>Best Practices:</p>
+<ul>
+<li>Populate with required VLANs. Consider using multiple Policies to coincide with specific use-cases of the intended vNIC.</li>
+<li>In Most cases, you would want to use the same Ethernet Network Group Policy for vNICs assigned to both A and B Fabrics. For HA Failover purposes, you want the same VLANs to be able to be passed from both Fabrics.</li>
+<li>Keep the default settings. Change it only if needed.</li>
+</ul>
+<p>Click the Add VLANs drop-down box, select Enter Manually, enter VLAN 70 and select Enter. Under the VLAN ID table, select the actions button for VLAN 70,select Set Native VLAN, then click Create:</p>
+<p><img alt="image129.png" src="media/image129.png" /></p>
+<p><em>Figure 124</em></p>
+<p>Fromthe Select Policies screen, choose the policy you just created and click Select.</p>
+<p>Click Select Policies for Ethernet Network Control, select Create Policy, provide a name, set the tag, and click Next:</p>
+<p><img alt="image130.png" src="media/image130.png" /></p>
+<p><em>Figure 125</em></p>
+<p>Toggle the Enable CDP switch to enable CDP, toggle the Enable Transmit switch under LLDP as shown below, then click Create:</p>
+<p><img alt="image131.png" src="media/image131.png" /></p>
+<p><em>Figure 126</em></p>
+<p>Click Select Policy for Ethernet QoS, select Create Policy, provide a name, set the tag, and click Next:</p>
+<p><img alt="image132.png" src="media/image132.png" /></p>
+<p><em>Figure 127</em></p>
+<p>Select the UCS Server (FI-Attached) tab, ensure MTU, Bytes is 1500 and select Create:</p>
+<p><img alt="image133.png" src="media/image133.png" /></p>
+<p><em>Figure 128</em></p>
+<p>Best Practices:</p>
+<ul>
+<li>In the absence of any specific guidance or use-case, use default settings.</li>
+<li>Keep in mind that with UCS the Ethernet QoS Policies are only enforced if there’s congestion sensed on the port. Otherwise, all the queues are available for existing traffic</li>
+<li>Simple Use Case Example: Video Streaming Packets (WebEx as example) would likely need a higher priority traffic flow than email traffic.</li>
+<li>If you are using Jumbo MTU (Size 9000), you will have to configure it end to end and here you can change it for the vNIC.</li>
+</ul>
+<p>Click Select Policy for Ethernet Adapter, select Create Policy, provide a name, set the tag, and click Select Default Configuration:</p>
+<p><img alt="image134.png" src="media/image134.png" /></p>
+<p><em>Figure 129</em></p>
+<p>Under Select Cisco Provided Configuration, click on the eye next to Linux as shown below to see the policy details:</p>
+<p><img alt="image135.png" src="media/image135.png" /></p>
+<p><em>Figure 130</em></p>
+<p>Close the pop-up window by clicking the X next to View Linux, select the radio button next to Linux, then click Select:</p>
+<p><img alt="image136.png" src="media/image136.png" /></p>
+<p><em>Figure 131</em></p>
+<p>Best Practices:</p>
+<ul>
+<li>Since the Default Settings have been pre-configured for a given OS-type and/or Workload Use-Case, certainly you want to adopt the correct default settings for optimal network performance of the server.</li>
+<li>If you are going to change a setting from the default settings, highly recommend you do so in-accordance with either a vender supplied paper or Cisco Validated Design (CVD) document. Experimenting with different settings should be vetted in a Lab Environment before introducing those settings to a Production Environment.</li>
+</ul>
+<p>Click Next</p>
+<p>Select UCS Server (FI-Attached), leave all the settings default, and click Create:</p>
+<p>Walk through the settings and see if there are features, like PTP that can be useful for your environment.</p>
+<p><img alt="image137.png" src="media/image137.png" /></p>
+<p><em>Figure 132</em></p>
+<p>There are different features of the vNIC such as usNIC, VMQ and SR-IOV. Leave the Connection set to Disabled and click Create.</p>
+<p>Now we have created one vNIC template. Because the Failover is enabled, we are not going to create another vNIC template where the traffic is going over Fabric Interconnect B. In certain production environments you will have to do this in order to divide traffic across the A and B side fabrics.</p>
+<h2 id="step-2-vhba-template">Step 2: vHBA Template</h2>
+<p>Now click the vHBA Templates and click on Create vHBA Template:</p>
+<p><img alt="image138.png" src="media/image138.png" /></p>
+<p><em>Figure 133</em></p>
+<p>Give the template a unique name with -A at the end as we are configuring a vHBA template for the A-Fabric, set the tag, and click next:</p>
+<p><img alt="image139.png" src="media/image139.png" /></p>
+<p><em>Figure 134</em></p>
+<p>Click Select Pool under the WWPN Pool section, click Create Pool, give the pool a unique name, set the tag, and click Next:</p>
+<p><img alt="image140.png" src="media/image140.png" /></p>
+<p><em>Figure 135</em></p>
+<p>In the From field, enter your POD number plus 00:00 for the last two octets (i.e. 20:00:00:25:B5:01:00:00). Set the Size to 16 then click Create:</p>
+<p><img alt="image141.png" src="media/image141.png" /></p>
+<p><em>Figure 136</em></p>
+<p>Back in the vHBA Template, select the correct Switch ID (A for VSAN-A and later on B for VSAN-B):</p>
+<p><img alt="image142.png" src="media/image142.png" /></p>
+<p><em>Figure 137</em></p>
+<p>Click Select Policy under Fibre Channel Network, click Create Policy, provide a name, set the tag, and click Next (for vHBA-A Template, create a new Fibre Channel Network Policy with VLAN 700):</p>
+<p><img alt="image143.png" src="media/image143.png" /></p>
+<p>Select UCS Server (FI-Attached), fill in the VSAN ID (700 for vHBA-A. 701 for vHBA-B), and select Create:</p>
+<p><img alt="image144.png" src="media/image144.png" /></p>
+<p><em>Figure 138</em></p>
+<p>Click Select Policy under Fibre Channel QoS, click Create Policy, provide a name, set the tag, and click Next:</p>
+<p><img alt="image145.png" src="media/image145.png" /></p>
+<p><em>Figure 139</em></p>
+<p>Select UCS Server (FI-Attched) and click Create:</p>
+<p><img alt="image146.png" src="media/image146.png" /></p>
+<p><em>Figure 140</em></p>
+<p>Click Select Policy under Fibre Channel Adapter, click Create Policy, provide a name, set the tag, and click Select Default Configuration, choose Linux, click Select, click Next, then click Create:</p>
+<p><img alt="image147.png" src="media/image147.png" /></p>
+<p><em>Figure 141</em></p>
+<p>Note: If the Fabric Interconnect is in FC Switch Mode you have to configure the FC Zones because FC zoning would be handled by the FIs. Most common is to leave the Fabric Interconnect in the default FC End-host mode and the FC zones will be configured on the upstream FC switches such as Cisco MDS.</p>
+<p>Click Create to finalize the creation of the vHBA template for VSAN-A. Now return to the step when vHBA Template A was created and follow the same steps to create a template for VSAN-B. Be sure to select switch ID B for the placement and when you create the create the Fibre Channel Network Policy to change the VSAN ID to 701. Once the second template has been created, you will now see two vHBA Templates as shown below:</p>
+<p><img alt="image148.png" src="media/image148.png" /></p>
+<p><em>Figure 142</em></p>
+<h2 id="step-3-ucs-server-profile-template">Step 3: UCS Server Profile Template</h2>
+<p>Under Templates, select UCS Server Profile Templates and click on Create UCS Server Profile Template.</p>
+<p>Provide a name, select the radio button next to UCS Server (FI-Attached), set the tag, and click Next:</p>
+<p><img alt="image149.png" src="media/image149.png" /></p>
+<p><em>Figure 143</em></p>
+<p>Now we have to create different types of Policies. Click on Select Pool under UUID Pool to create a new UUID Pool Policy.</p>
+<p><img alt="image150.png" src="media/image150.png" /></p>
+<p><em>Figure 144</em></p>
+<p>Now click Create Pool under Select Pool. A UUID is a unique identifier for the server. Provide a name, set the tags, and click Next:</p>
+<p><img alt="image151.png" src="media/image151.png" /></p>
+<p><em>Figure 145</em></p>
+<p>Fill in the Prefix with a unique sequence (you can start with your pod number), provide the starting UUID suffix in the field under UUID Blocks, make the size of the UUID pool 16, and then click Create:</p>
+<p><img alt="image152.png" src="media/image152.png" /></p>
+<p><em>Figure 146</em></p>
+<p>Click Select Policy next to BIOS, click Create Policy, provide a name, set the tag, and click Next:</p>
+<p><img alt="image153.png" src="media/image153.png" /></p>
+<p><em>Figure 147</em></p>
+<p>Make sure UCS Server (FI-Attached) is selected (Note: Any changes to this policy in the future will require a reboot of the server to take effect.)</p>
+<p><img alt="image154.png" src="media/image154.png" /></p>
+<p><em>Figure 148</em></p>
+<p>BIOS Recommendations:</p>
+<ul>
+<li>To have more information about the default settings and what is means, read Cisco UCS Server BIOS Tokens in Intersight Managed Mode:</li>
+<li>https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/Intersight/IMM_BIOS_Tokens_Guide/b_IMM_Server_BIOS_Tokens_Guide/b_UCS_BIOS_Tokens_Guide_chapter_01.html</li>
+<li>For High Performance BIOS settings read Performance Tuning Best Practices Guide for Cisco UCS M7 Platforms:</li>
+<li>https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-b-series-blade-servers/ucs-m7-platforms-wp.html#CiscoUCSBIOSoptions</li>
+</ul>
+<p>Take some time to expand and review various settings that can be applied to UCS servers.For now, we won’t make any modifications leaving everything to their platform-default state and proceed by clicking Create.</p>
+<p>Now click Select Policy next to Boot Order, click Create Policy, provide a name, set the tag, and click Next:</p>
+<p><img alt="image155.png" src="media/image155.png" /></p>
+<p><em>Figure 149</em></p>
+<p>There are many possibilities for booting UCS servers. For this lab, we will be adding three methods (some servers in the lab have NVMe drives which can be booted from instead of M.2 drives).</p>
+<p>Ensure UCS Server (FI-Attached) is selected and toggle Enable Secure Boot. UEFI will be default when selecting this option.</p>
+<p>Click on Add Boot Device and select Virtual Media. Type vMedia in the Device Name field and leave the Sub-Type None.</p>
+<p>Now add a second boot device by clicking on Add Boot Device, select Local Disk, type Local in the Device Name, and type MSTOR-RAID in the Slot field. (Note: storage slot information can be found in the inventory of the server under Storage Controllers if needed). Leave the remaining input fields empty.</p>
+<p>In Task 4, you were asked to document f your server has NVMe drives. If it does, click Add Boot Device, Select NVMe, type FRONT-NVME-1 in the Device Name field. Clcik the up arrow for the the Virtual Media to ensure it is at the top of the list after creating the boot options and then click Create:</p>
+<p><img alt="image156.png" src="media/image156.png" /></p>
+<p><img alt="image157.png" src="media/image157.png" /></p>
+<p><em>Figure 150</em></p>
+<p>We will skip the Firmware Policy and Memory Policy for this lab.</p>
+<p>Now click Select Policy next to Power, click Create Policy, provide a name, set the tag, and click Next:</p>
+<p><img alt="image158.png" src="media/image158.png" /></p>
+<p><em>Figure 151</em></p>
+<p>Ensure the UCS Server (FI-Attached) tab is selected, ensure the Power Profiling slider is enabled (note: this option is only for UCS X-Series servers and allows the power manager to run power profiling utility to determine the power needs of the server), set the Power Priority to Medium, set Power Restore to Last State, leave the PPL state default, and click Create:</p>
+<p><img alt="image159.png" src="media/image159.png" /></p>
+<p><em>Figure 152</em></p>
+<p>Best Practices</p>
+<ul>
+<li>Recommend profiling on all servers. PCIe node included with server.</li>
+<li>Highest priority servers are allocated any power available above minimum.</li>
+<li>Once higher priority servers have their max allocation, lower priority servers are allocated what is left.</li>
+<li>Power restore refers to chassis power restoration. Last State is the recommended setting.</li>
+</ul>
+<p>The Scrub Policy settings will be skipped in this lab.</p>
+<p>Click Select Policy next to Virtual Media, click Create Policy, provide a name, set the tag, and click Next:</p>
+<p><img alt="image160.png" src="media/image160.png" /></p>
+<p><em>Figure 153</em></p>
+<p>Ensure the UCS Server (FI-Attached) tab is selected and verify all three settings (Enable Virtual Media, Enable Virtual Media Encryption and Enable Low Power USB) are enabled (don’t add Virtual Media to the policy), and click Create:</p>
+<p><img alt="image161.png" src="media/image161.png" /></p>
+<p><em>Figure 154</em></p>
+<p>Now, proceed to the Management Configuration of the Server Profile Template by clicking Next.</p>
+<p>We are not going to configure Certificate Management, IPMI over LAN, Local User, Serial Over LAN.</p>
+<p>Local User is needed for the usage of CURL and get Redfish information.</p>
+<p>The IMC Access Policy is not required, but we will create a policy for this lab. Next to IMC Access, click Create Policy, provide a name, set the tag, and click Next:</p>
+<p><img alt="image162.png" src="media/image162.png" /></p>
+<p><em>Figure 155</em></p>
+<p>Choose In-Band Configuration, type 70 in the VLAN ID field, ensure IPv4 is selected, click Select IP Pool, choose UCSXKVMPool, click Select, then click Create:</p>
+<p><img alt="image163.png" src="media/image163.png" /></p>
+<p><em>Figure 156</em></p>
+<p>Next to SNMP, click Create Policy, provide a name, set the tag, and click Next:</p>
+<p><img alt="image164.png" src="media/image164.png" /></p>
+<p><em>Figure 157</em></p>
+<p>Enable SNMP, type 161 in the SNMP Port input box, and click Create.</p>
+<p><img alt="image165.png" src="media/image165.png" /></p>
+<p><em>Figure 158</em></p>
+<p>Next to Syslog, click Create Policy, provide a name, set the tag, and click Next:</p>
+<p><img alt="image166.png" src="media/image166.png" /></p>
+<p><em>Figure 159</em></p>
+<p>Enable Syslog Server 1, input 172.20.10.10 in the Hostname/IP Address input field, select Warning from the Minimum Severity to Report dropdown box, and click Create:</p>
+<p><img alt="image167.png" src="media/image167.png" /></p>
+<p><em>Figure 160</em></p>
+<p>Next to Virtual KVM, click Create Policy, provide a name, set the tag, and click Next:</p>
+<p><img alt="image168.png" src="media/image168.png" /></p>
+<p><em>Figure 161</em></p>
+<p>Enable Allow Tunneled vKVM to settings and click Create, then click Next to proceed to the Storage Configuration:</p>
+<p><img alt="image169.png" src="media/image169.png" /></p>
+<p><em>Figure 162</em></p>
+<p>Next to Storage, click Create Policy, provide a name, set the tag, and click Next:</p>
+<p><img alt="image170.png" src="media/image170.png" /></p>
+<p><em>Figure 163</em></p>
+<p>Enable the M.2 RAID Configuration, select MSTOR-RAID-1, click Create, then click Next to proceed to the Network Configuration:</p>
+<p><img alt="image171.png" src="media/image171.png" /></p>
+<p><em>Figure 164</em></p>
+<p>Best Practices and Recommendations:</p>
+<ul>
+<li>When migrating a server any existing storage configuration will remain intact when the server is discovered in Intersight.</li>
+<li>Intersight will never automatically delete a Virtual Drive unless defined to do so in a scrub policy.</li>
+<li>If a scrub policy is not defined, existing Virtual Drives can be removed by manually deleting them from the Intersight server inventory and rebooting the host.</li>
+<li>Intersight does not support explicit deletion of Drive Groups. Drive Groups are auto removed if they are empty.</li>
+<li>If no storage policy is attached to the profile the existing drives will be discovered by the host. A server will also likely boot successfully from an existing UEFI Boot Drive.</li>
+<li>If a storage policy is applied from Intersight it will ONLY create new drives or adopt existing drives if the configuration matches.</li>
+<li>For the M.2 HWRAID module you simply toggle the setting in the storage policy.</li>
+<li>Un-toggling the M.2 HWRAID option will NOT remove an existing Virtual Drive.</li>
+<li>If a Virtual Drive is defined in the storage policy RAID section and matches an existing volume the existing volume will be “adopted” by the policy.</li>
+<li>What this means is, nothing will happen, but the policy deploy will succeed.</li>
+<li>If the drive name is the same, but the settings are different (RAID level, size, included drives) the policy deploy will fail.</li>
+<li>Any existing volumes that do not appear in the policy by name will be left as-is on the controller.</li>
+<li>If there is not an existing volume with the same name a new volume will be created. Deploy will fail if there is insufficient space or any of the physical drives are used in a different drive group configuration.</li>
+<li>Decommissioning or recommissioning operation will not delete the RAIDs or data on the disks.</li>
+<li>Be careful to review the Server Inventory, particularly Storage Controller and Drive Population in the Server before creating the IMM Storage Policy</li>
+<li>Storage Policy Help: https://www.cisco.com/c/en/us/td/docs/unified_computing/Intersight/b_Intersight_Managed_Mode_Configuration_Guide/b_intersight_managed_mode_guide_chapter_0110.html#Cisco_Reference.dita_dc8f2e67-3c8c-46fa-9103-81f51f6e8387</li>
+<li>Boot from Local Storage: https://www.cisco.com/c/en/us/support/docs/servers-unified-computing/ucs-infrastructure-ucs-manager-software/218160-configure-boot-from-local-storage-in-int.html</li>
+</ul>
+<p>Next to LAN Connectivity, click Create Policy, provide a name, set the tag, and click Next:</p>
+<p><img alt="image172.png" src="media/image172.png" /></p>
+<p><em>Figure 165</em></p>
+<p>The vNIC placement can be done via manual configuration or Auto vNIC Placement. We are going to create the vNIC Placement Manually.</p>
+<p><img alt="image173.png" src="media/image173.png" /></p>
+<p><em>Figure 166</em></p>
+<p>Click add and select vNIC from Template</p>
+<p><img alt="image174.png" src="media/image174.png" /></p>
+<p><em>Figure 167</em></p>
+<p><img alt="image175.png" src="media/image175.png" /></p>
+<p>Give it the name vETH0. Now you see the settings from the template already populated.</p>
+<p><img alt="image176.png" src="media/image176.png" /></p>
+<p><em>Figure 168</em></p>
+<p>Scroll down and ensure the PCI Order is set to 0 then click Add:</p>
+<p><img alt="image177.png" src="media/image177.png" /></p>
+<p><em>Figure 169</em></p>
+<p>Click on Graphic vNIC Editor to view a graphical representation of the connectivity:</p>
+<p><img alt="image178.png" src="media/image178.png" /></p>
+<p><em>Figure 170</em></p>
+<p>Click on Save, then click Create.</p>
+<p>Because of the hardware failover that is configured in the vNIC Template, you don’t have to create vETH1.</p>
+<p>Best Practices and recommendations:</p>
+<ul>
+<li>Auto vNIC Placement:</li>
+<li>The system defines the adapter placement and PCI order</li>
+<li>Great for single adapter Blades/Servers. vNICs precede vHBAs.</li>
+<li>With Auto-placement, if more than one adapter is being used the neely created vNICs are distributed across both adapters during Server Profile deployment.</li>
+<li>If using Auto vNIC placement ofr LAN Connectivity Policy, you must chose Auto placement for SAN Connectivity policy. You cannot mix placement options.</li>
+<li>Manual vNIC Config with Simple Placement</li>
+<li>You must select PCI order and it has to start with 0 for the first PCIe device. The unique numbering is per adapter.</li>
+<li>It allows system to automatically determine the Slot ID and PCI Link.</li>
+<li>Do not use simple placement when having dual PCI link VICs</li>
+<li>Manual vNIC Config with Advanced Placement</li>
+<li>Select PCI Order and Slot ID &amp; PCI Link</li>
+<li>Slot ID corresponds to the adapter in the Node. Numbering starts with the MLOM and then can be 1-15 afterwards. Single Adapter configuration can be just MLOM</li>
+<li>PCI Link should be 0, unless you are dealing with a Dual PCI Link.</li>
+<li>PCI Order must start with 0 and the numbering is unique per adapter. This should be honored across LAN and SAN Connectivyt Policies.</li>
+</ul>
+<p>Next to SAN Connectivity, click Create Policy, provide a name, set the tag, and click Next:</p>
+<p><img alt="image179.png" src="media/image179.png" /></p>
+<p><em>Figure 171</em></p>
+<p>Under WWNN Pool, click Select Pool and then click Create Pool. Provide a name, set the tag, and click Next:</p>
+<p><img alt="image180.png" src="media/image180.png" /></p>
+<p><em>Figure 172</em></p>
+<p>Fill in a block as you did for the WWPN pool, starting with 20:00:00:25:B5 using your pod number and a size of 8, then click Create:</p>
+<p><img alt="image181.png" src="media/image181.png" /></p>
+<p><em>Figure 173</em></p>
+<p>Click on Add and select vHBA from Template:</p>
+<p><img alt="image182.png" src="media/image182.png" /></p>
+<p><em>Figure 174</em></p>
+<p>Give the vHBA a name with A at the end. Click Select vHBA Template, choose the VSAN-A template you created earlier, then click Select:</p>
+<p><img alt="image183.png" src="media/image183.png" /></p>
+<p>Change the PCI Order to 1 (0 is already being used by the vETH0), then click Add:</p>
+<p><img alt="image184.png" src="media/image184.png" /></p>
+<p><em>Figure 175</em></p>
+<p>Perform the same steps to create vHBA-B and do not forget to change the PCI Order to 2.</p>
+<p>The final result should be:</p>
+<p><img alt="image185.png" src="media/image185.png" /></p>
+<p><em>Figure 176</em></p>
+<p>Click Create and then click Next.</p>
+<p>You will see something like:</p>
+<p><img alt="image186.png" src="media/image186.png" /></p>
+<p><em>Figure 177</em></p>
+<p>You will see the Summary. At the bottom of the screen, you see close. If you click on it, the UCS Server Profile Template is created. Select Derive Profiles.</p>
+<p>Select your server that is assigned to you and click Next:</p>
+<p><img alt="image187.png" src="media/image187.png" /></p>
+<p><em>Figure 178</em></p>
+<p>Change the Name to something unique to your Pod and click Next:</p>
+<p><img alt="image188.png" src="media/image188.png" /></p>
+<p><em>Figure 179</em></p>
+<p>Verify the accuracy of the Summary provided, once verified, click Derive.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="07-task-4-inventory.html" class="btn btn-neutral float-left" title="Task 4 - Inventory"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="09-task-6-deploying-server-profiles.html" class="btn btn-neutral float-right" title="Task 6 - Deploying Server Profiles">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="07-task-4-inventory.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="09-task-6-deploying-server-profiles.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
