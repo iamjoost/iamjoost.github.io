@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task 3: Create Chassis Policy Template | LTRCOM-2488</title>
+  <link rel="stylesheet" href="assets/stylesheets/github-pages.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">LTRCOM-2488</a>
+  </header>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Site navigation">
+<a class="" href="index.html">Home</a>
+<a class="" href="background.html">Background</a>
+<a class="" href="scenario.html">Scenario</a>
+<a class="" href="network-diagram.html">Network Diagram</a>
+<a class="" href="task-1-let-s-start-with-the-lab.html">Task 1: Let’s start with the lab!</a>
+<a class="" href="task-2-configuring-fabric-interconnects.html">Task 2: Configuring Fabric Interconnects</a>
+<a class="active" href="task-3-create-chassis-policy-template.html">Task 3: Create Chassis Policy Template</a>
+<a class="" href="task-4-inventory.html">Task 4: Inventory</a>
+<a class="" href="task-5-create-server-profile-template.html">Task 5: Create Server Profile Template</a>
+<a class="" href="task-6-deploying-server-profiles.html">Task 6: Deploying Server Profiles</a>
+<a class="" href="task-7-metrics.html">Task 7: Metrics</a>
+<a class="" href="task-8-intersight-api.html">Task 8: Intersight API</a>
+<a class="" href="bonus-task.html">Bonus Task</a>
+<a class="" href="the-end.html">The End</a>
+    </nav>
+    <main class="content">
+<h1 id="task-3-create-chassis-policy-template">Task 3: Create Chassis
+Policy Template</h1>
+<p>To create a Chassis Profile Template, Go to
+<strong>Templates</strong>, <strong>UCS Chassis Profile
+Template</strong>, and click <strong>Create UCS Chassis Profile
+Template</strong>:</p>
+<figure>
+<img src="assets/media/image93.png" style="width:5.16304in;height:2.41926in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<p>Provide a name, set the tag, and click <strong>Next</strong>:</p>
+<figure>
+<img src="assets/media/image94.png" style="width:3.15179in;height:2.35365in" alt="A screenshot of a computer program Description automatically generated" />
+</figure>
+
+<p>Create a new IMC Access Policy by clicking <strong>Select
+Policy</strong> next to IMC Access and then click <strong>Create
+Policy</strong>. Provide a name, set the tag, and click
+<strong>Next</strong>:</p>
+<figure>
+<img src="assets/media/image95.png" style="width:2.65226in;height:2.12282in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<p>Select the <strong>UCS Chassis</strong> tab, change the VLAN ID to
+<strong>70,</strong> click <strong>Select IP Pool</strong> under IP
+Pool, select the <strong>UCSXKVMPool</strong> radio button from the
+list, press <strong>Select</strong>, then press
+<strong>Create:</strong></p>
+<figure>
+<img src="assets/media/image96.png" style="width:3.08865in;height:2.47005in" alt="A screenshot of a computer AI-generated content may be incorrect." />
+</figure>
+
+<p><strong>Best practice:</strong></p>
+<ul>
+<li>Every chassis do need two IP addresses from a pool. Create a
+separate Chassis-IP-Pool which is non overlapping with other IP
+Pools</li>
+</ul>
+<p>Create a new Power Policy by clicking <strong>Select Policy</strong>
+next to <strong>Power</strong> and then click <strong>Create
+Policy</strong>. Provide a name, set the tag, and click
+<strong>Next</strong>:</p>
+<figure>
+<img src="assets/media/image97.png" style="width:2.51532in;height:1.89115in" alt="A screenshot of a computer program Description automatically generated" />
+</figure>
+
+<p>Select <strong>UCS Chassis</strong>, ensure <strong>Grid</strong> is
+selected for the Power Redundancy Policy, and click
+<strong>Create</strong>:</p>
+<figure>
+<img src="assets/media/image98.png" style="width:2.77173in;height:2.23451in" alt="A screenshot of a computer AI-generated content may be incorrect." />
+</figure>
+
+<p><strong>Best Practices</strong></p>
+<ul>
+<li><p>Redundancy per customer requirements</p></li>
+<li><p>Default options recommended for others</p></li>
+<li><p>Dynamic power rebalancing will re-allocate power between servers
+if competing for power in power constrained environments.</p></li>
+<li><p>Power allocation sets an input power limit. Throttling is used to
+stay within the limit.</p></li>
+</ul>
+<p>Create a new Chassis SNMP Policy by clicking <strong>Select
+Policy</strong> next to <strong>SNMP</strong> and then click
+<strong>Create Policy</strong>. Provide a name, set the tag, and click
+<strong>Next</strong>:</p>
+<figure>
+<img src="assets/media/image99.png" style="width:2.62301in;height:2.02893in" alt="A screenshot of a computer program Description automatically generated" />
+</figure>
+
+<p>Select <strong>UCS Chassis,</strong> type <strong>ACString</strong>
+in the Access Community String, and click <strong>Create</strong>:</p>
+<figure>
+<img src="assets/media/image100.png" style="width:3.36031in;height:2.06758in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<p>Create a new Chassis Thermal Policy by clicking <strong>Select
+Policy</strong> next to <strong>Thermal</strong> and then click
+<strong>Create Policy</strong>. Provide a name, set the tag, and click
+<strong>Next</strong>:</p>
+<p><img src="assets/media/image101.png" style="width:2.49384in;height:1.8523in" alt="A screenshot of a computer program Description automatically generated" />.</p>
+<p><strong>Best Practices</strong></p>
+<ul>
+<li><p>Applies to chassis or rack mount servers</p></li>
+<li><p>Sets the base fan speed</p></li>
+<li><p>Workloads with frequent transitions from idle to max may throttle
+while fan speeds ramp from lower levels.</p></li>
+<li><p>Increase policy to prevent throttling.</p></li>
+</ul>
+<p>Select <strong>UCS Chassis,</strong> ensure <strong>Balanced</strong>
+is selected for the Fan Control Mode, and click
+<strong>Create</strong>.</p>
+<figure>
+<img src="assets/media/image102.png" style="width:4.19996in;height:2.30756in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<p>After the creation of the policies, the chassis configuration should
+look similar to the image below. Click <strong>Next</strong> and
+<strong>Close</strong>. (Do NOT click Derive Profiles):</p>
+<figure>
+<img src="assets/media/image103.png" style="width:4.13664in;height:1.57202in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+    </main>
+  </div>
+</body>
+</html>

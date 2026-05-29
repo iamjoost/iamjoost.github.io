@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task 4: Inventory | LTRCOM-2488</title>
+  <link rel="stylesheet" href="assets/stylesheets/github-pages.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">LTRCOM-2488</a>
+  </header>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Site navigation">
+<a class="" href="index.html">Home</a>
+<a class="" href="background.html">Background</a>
+<a class="" href="scenario.html">Scenario</a>
+<a class="" href="network-diagram.html">Network Diagram</a>
+<a class="" href="task-1-let-s-start-with-the-lab.html">Task 1: Let’s start with the lab!</a>
+<a class="" href="task-2-configuring-fabric-interconnects.html">Task 2: Configuring Fabric Interconnects</a>
+<a class="" href="task-3-create-chassis-policy-template.html">Task 3: Create Chassis Policy Template</a>
+<a class="active" href="task-4-inventory.html">Task 4: Inventory</a>
+<a class="" href="task-5-create-server-profile-template.html">Task 5: Create Server Profile Template</a>
+<a class="" href="task-6-deploying-server-profiles.html">Task 6: Deploying Server Profiles</a>
+<a class="" href="task-7-metrics.html">Task 7: Metrics</a>
+<a class="" href="task-8-intersight-api.html">Task 8: Intersight API</a>
+<a class="" href="bonus-task.html">Bonus Task</a>
+<a class="" href="the-end.html">The End</a>
+    </nav>
+    <main class="content">
+<h1 id="task-4-inventory">Task 4: Inventory</h1>
+<p>When configuring UCS, a domain and chassis policy similar to what was
+created earlier would be applied, and the systems administrator would
+start seeing the inventory of the Fabric Interconnects, Chassis and
+Servers populate in Intersight as they are discovered. We will now
+review the inventory of devices that have been discovered in
+Intersight.</p>
+<p>First, navigate to <strong>Chassis</strong> and select a chassis from
+the list:</p>
+<figure>
+<img src="assets/media/image104.png" style="width:4.5429in;height:1.77595in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<p>The chassis details are now displayed for the chassis you selected in
+the previous step.</p>
+<figure>
+<img src="assets/media/image105.png" style="width:3.76453in;height:3.39883in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<p>In the upper right section of the Properties column, select
+<strong>Rear</strong> to change the view and see the rear components
+installed in the chassis:</p>
+<figure>
+<img src="assets/media/image106.png" style="width:3.27478in;height:2.56465in" alt="A close-up of a computer Description automatically generated" />
+</figure>
+
+<p>Now click on the <strong>Inventory</strong> tab:</p>
+<figure>
+<img src="assets/media/image107.png" style="width:1.17823in;height:1.97624in" alt="A screen shot of a black screen Description automatically generated" />
+</figure>
+
+<p>Select <strong>Intelligent Fabric Module 1</strong> and review the
+information under the <strong>General</strong>, <strong>Backplane
+Ports</strong>, <strong>Fabric Ports</strong>, <strong>Fan
+Modules</strong> and <strong>Graphic View:</strong></p>
+<figure>
+<img src="assets/media/image108.png" style="width:3.9279in;height:2.59474in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<p>There are no X-Fabric Modules installed in the chassis, this can be
+verified by selecting <strong>X-Fabric Modules</strong> and looking for
+model <strong>UCSX-9508-RBLK</strong> signifying a blank module is
+installed in each slot.</p>
+<figure>
+<img src="assets/media/image109.png" style="width:4.75822in;height:2.20238in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<p>The <strong>Thermal</strong> information provides information such as
+how the Fan Control Mode is configured and the operational state of the
+Fan Modules:</p>
+<figure>
+<img src="assets/media/image110.png" style="width:1.28532in;height:1.94388in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<p>Select <strong>Power</strong> to verify the chassis power
+configuration and how many PSUs are installed.</p>
+<figure>
+<img src="assets/media/image111.png" style="width:3.70711in;height:2.83961in" alt="A screenshot of a computer AI-generated content may be incorrect." />
+</figure>
+
+<p>Now click <strong>Servers</strong> to display a list of all servers
+populated in the chassis:</p>
+<figure>
+<img src="assets/media/image112.png" style="width:4.32476in;height:1.32307in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<p>Before we proceed to server inventory, select
+<strong>Servers</strong> and click on your assigned server.</p>
+<p>In this example we are going to look at SRV-17 or
+RTP91-0FI6454-03-1-1:</p>
+<figure>
+<img src="assets/media/image113.png" style="width:4.08522in;height:1.64411in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<p>At the <strong>General</strong> tab, you will find the server’s
+serial number, amount of CPUs, Cores, Memory, Adapters, Firmware
+version, Alarms and much more:</p>
+<figure>
+<img src="assets/media/image114.png" style="width:3.40601in;height:2.428in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<p>In the upper right section of the Properties column, select
+<strong>Top</strong> to change the view and see the internal components
+of the server:</p>
+<img src="assets/media/image115.png" style="width:3.45711in;height:2.03563in" alt="A computer chip with many green slots Description automatically generated with medium confidence" />
+
+<p>Select the <strong>Inventory</strong> tab and then select
+<strong>Expand All</strong>.</p>
+<p>Walk through the various components and review the hardware
+installed. Under <strong>Storage Controllers</strong>, verify if the
+server has a <strong>M.2 Controller.</strong> This will be needed for
+another task. Verify if the server also has NVMe Drives
+(<strong>Controller NVME-Direct-U.2 Drives</strong>). If your server has
+NVMe U.2 drives, document the drive names (i.e.
+<strong>FRONT-NVME-1</strong> or <strong>FRONT-NVME-2</strong>):</p>
+<figure>
+<img src="assets/media/image116.png" style="width:0.99003in;height:2.86549in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<p>Click the <strong>UCS Server Profile</strong> taband verify that
+there is no Server Profile assigned:</p>
+<figure>
+<img src="assets/media/image117.png" style="width:5.626in;height:0.98053in" alt="A screen shot of a computer Description automatically generated" />
+</figure>
+
+<p>Click the <strong>HCL</strong> tab and verify the information
+displayed in the HCL tab (your HCL may look different than what is
+displayed below:</p>
+<figure>
+<img src="assets/media/image118.png" style="width:4.59476in;height:2.09933in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<p>Now click the Topology tab to show the connections between the
+servers, IFMs and Fabric Interconnects:</p>
+<figure>
+<img src="assets/media/image119.png" style="width:4.02134in;height:2.0792in" alt="A computer screen shot of a server AI-generated content may be incorrect." />
+</figure>
+
+<p>Metrics tab information will be reviewed later as there is a task
+which walks throught the different Metrics in Intersight.</p>
+<p>If no server profile is assigned to the server, you should not see
+any connectivity as shown under the Connectivity tab:</p>
+<figure>
+<img src="assets/media/image120.png" style="width:6.08304in;height:0.99067in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task 1: Let’s start with the lab! | LTRCOM-2488</title>
+  <link rel="stylesheet" href="assets/stylesheets/github-pages.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">LTRCOM-2488</a>
+  </header>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Site navigation">
+<a class="" href="index.html">Home</a>
+<a class="" href="background.html">Background</a>
+<a class="" href="scenario.html">Scenario</a>
+<a class="" href="network-diagram.html">Network Diagram</a>
+<a class="active" href="task-1-let-s-start-with-the-lab.html">Task 1: Let’s start with the lab!</a>
+<a class="" href="task-2-configuring-fabric-interconnects.html">Task 2: Configuring Fabric Interconnects</a>
+<a class="" href="task-3-create-chassis-policy-template.html">Task 3: Create Chassis Policy Template</a>
+<a class="" href="task-4-inventory.html">Task 4: Inventory</a>
+<a class="" href="task-5-create-server-profile-template.html">Task 5: Create Server Profile Template</a>
+<a class="" href="task-6-deploying-server-profiles.html">Task 6: Deploying Server Profiles</a>
+<a class="" href="task-7-metrics.html">Task 7: Metrics</a>
+<a class="" href="task-8-intersight-api.html">Task 8: Intersight API</a>
+<a class="" href="bonus-task.html">Bonus Task</a>
+<a class="" href="the-end.html">The End</a>
+    </nav>
+    <main class="content">
+<h1 id="task-1-lets-start-with-the-lab">Task 1: Let’s start with the
+lab!</h1>
+<h2 id="step-1-login-into-intersight">Step 1: Login Into Intersight</h2>
+<p>Below are the details for each pod. On the piece of paper you will
+see your pod number. You can use those details to login and shows you
+which server is assigned to you.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>Pod</strong></th>
+<th style="text-align: center;"><strong>Username</strong></th>
+<th style="text-align: center;"><strong>Password</strong></th>
+<th style="text-align: center;"><strong>Server</strong></th>
+<th style="text-align: center;"><strong>IMM Domain</strong></th>
+<th style="text-align: center;"><strong>VLAN</strong></th>
+<th style="text-align: center;"><strong>User Label</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><a
+href="mailto:ucsx01@intersighttme.de">ucsx01@intersighttme.de</a></td>
+<td style="text-align: center;"><a
+href="mailto:UCSX@Cisco123">UCSX@Cisco123</a></td>
+<td style="text-align: center;">int-ucs-4-1-1</td>
+<td style="text-align: center;">int-ucs-4</td>
+<td style="text-align: center;">701</td>
+<td style="text-align: center;">SRV1</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><a
+href="mailto:ucsx02@intersighttme.de">ucsx02@intersighttme.de</a></td>
+<td style="text-align: center;"><a
+href="mailto:UCSX@Cisco123">UCSX@Cisco123</a></td>
+<td style="text-align: center;">int-ucs-4-1-2</td>
+<td style="text-align: center;">int-ucs-4</td>
+<td style="text-align: center;">702</td>
+<td style="text-align: center;">SRV2</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"><a
+href="mailto:ucsx03@intersighttme.de">ucsx03@intersighttme.de</a></td>
+<td style="text-align: center;"><a
+href="mailto:UCSX@Cisco123">UCSX@Cisco123</a></td>
+<td style="text-align: center;">int-ucs-4-1-3</td>
+<td style="text-align: center;">int-ucs-4</td>
+<td style="text-align: center;">703</td>
+<td style="text-align: center;">SRV3</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><a
+href="mailto:ucsx04@intersighttme.de">ucsx04@intersighttme.de</a></td>
+<td style="text-align: center;"><a
+href="mailto:UCSX@Cisco123">UCSX@Cisco123</a></td>
+<td style="text-align: center;">int-ucs-4-1-4</td>
+<td style="text-align: center;">int-ucs-4</td>
+<td style="text-align: center;">704</td>
+<td style="text-align: center;">SRV4</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"><a
+href="mailto:ucsx05@intersighttme.de">ucsx05@intersighttme.de</a></td>
+<td style="text-align: center;"><a
+href="mailto:UCSX@Cisco123">UCSX@Cisco123</a></td>
+<td style="text-align: center;">int-ucs-4-1-5</td>
+<td style="text-align: center;">int-ucs-4</td>
+<td style="text-align: center;">705</td>
+<td style="text-align: center;">SRV5</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;"><a
+href="mailto:ucsx06@intersighttme.de">ucsx06@intersighttme.de</a></td>
+<td style="text-align: center;"><a
+href="mailto:UCSX@Cisco123">UCSX@Cisco123</a></td>
+<td style="text-align: center;">int-ucs-4-1-6</td>
+<td style="text-align: center;">int-ucs-4</td>
+<td style="text-align: center;">706</td>
+<td style="text-align: center;">SRV6</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;"><a
+href="mailto:ucsx07@intersighttme.de">ucsx07@intersighttme.de</a></td>
+<td style="text-align: center;"><a
+href="mailto:UCSX@Cisco123">UCSX@Cisco123</a></td>
+<td style="text-align: center;">int-ucs-4-1-7</td>
+<td style="text-align: center;">int-ucs-4</td>
+<td style="text-align: center;">707</td>
+<td style="text-align: center;">SRV7</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;"><a
+href="mailto:ucsx08@intersighttme.de">ucsx08@intersighttme.de</a></td>
+<td style="text-align: center;"><a
+href="mailto:UCSX@Cisco123">UCSX@Cisco123</a></td>
+<td style="text-align: center;">int-ucs-4-1-8</td>
+<td style="text-align: center;">int-ucs-4</td>
+<td style="text-align: center;">708</td>
+<td style="text-align: center;">SRV8</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;"><a
+href="mailto:ucsx09@intersighttme.de">ucsx09@intersighttme.de</a></td>
+<td style="text-align: center;"><a
+href="mailto:UCSX@Cisco123">UCSX@Cisco123</a></td>
+<td style="text-align: center;">int-ucs-5-1-1</td>
+<td style="text-align: center;">int-ucs-5</td>
+<td style="text-align: center;">709</td>
+<td style="text-align: center;">SRV9</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;"><a
+href="mailto:ucsx10@intersighttme.de">ucsx10@intersighttme.de</a></td>
+<td style="text-align: center;"><a
+href="mailto:UCSX@Cisco123">UCSX@Cisco123</a></td>
+<td style="text-align: center;">int-ucs-5-1-2</td>
+<td style="text-align: center;">int-ucs-5</td>
+<td style="text-align: center;">710</td>
+<td style="text-align: center;">SRV10</td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;"><a
+href="mailto:ucsx11@intersighttme.de">ucsx11@intersighttme.de</a></td>
+<td style="text-align: center;"><a
+href="mailto:UCSX@Cisco123">UCSX@Cisco123</a></td>
+<td style="text-align: center;">int-ucs-5-1-3</td>
+<td style="text-align: center;">int-ucs-5</td>
+<td style="text-align: center;">711</td>
+<td style="text-align: center;">SRV11</td>
+</tr>
+<tr>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;"><a
+href="mailto:ucsx12@intersighttme.de">ucsx12@intersighttme.de</a></td>
+<td style="text-align: center;"><a
+href="mailto:UCSX@Cisco123">UCSX@Cisco123</a></td>
+<td style="text-align: center;">int-ucs-5-1-4</td>
+<td style="text-align: center;">int-ucs-5</td>
+<td style="text-align: center;">712</td>
+<td style="text-align: center;">SRV12</td>
+</tr>
+<tr>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;"><a
+href="mailto:ucsx13@intersighttme.de">ucsx13@intersighttme.de</a></td>
+<td style="text-align: center;"><a
+href="mailto:UCSX@Cisco123">UCSX@Cisco123</a></td>
+<td style="text-align: center;">int-ucs-5-1-5</td>
+<td style="text-align: center;">int-ucs-5</td>
+<td style="text-align: center;">713</td>
+<td style="text-align: center;">SRV13</td>
+</tr>
+<tr>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;"><a
+href="mailto:ucsx14@intersighttme.de">ucsx14@intersighttme.de</a></td>
+<td style="text-align: center;"><a
+href="mailto:UCSX@Cisco123">UCSX@Cisco123</a></td>
+<td style="text-align: center;">int-ucs-5-1-6</td>
+<td style="text-align: center;">int-ucs-5</td>
+<td style="text-align: center;">714</td>
+<td style="text-align: center;">SRV14</td>
+</tr>
+<tr>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;"><a
+href="mailto:ucsx15@intersighttme.de">ucsx15@intersighttme.de</a></td>
+<td style="text-align: center;"><a
+href="mailto:UCSX@Cisco123">UCSX@Cisco123</a></td>
+<td style="text-align: center;">int-ucs-5-1-7</td>
+<td style="text-align: center;">int-ucs-5</td>
+<td style="text-align: center;">715</td>
+<td style="text-align: center;">SRV15</td>
+</tr>
+<tr>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;"><a
+href="mailto:ucsx16@intersighttme.de">ucsx16@intersighttme.de</a></td>
+<td style="text-align: center;"><a
+href="mailto:UCSX@Cisco123">UCSX@Cisco123</a></td>
+<td style="text-align: center;">int-ucs-5-1-8</td>
+<td style="text-align: center;">int-ucs-5</td>
+<td style="text-align: center;">716</td>
+<td style="text-align: center;">SRV16</td>
+</tr>
+<tr>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;"><a
+href="mailto:ucsx17@intersighttme.de">ucsx17@intersighttme.de</a></td>
+<td style="text-align: center;"><a
+href="mailto:UCSX@Cisco123">UCSX@Cisco123</a></td>
+<td style="text-align: center;">int-ucs-6-1-1</td>
+<td style="text-align: center;">int-ucs-6</td>
+<td style="text-align: center;">717</td>
+<td style="text-align: center;">SRV17</td>
+</tr>
+<tr>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;"><a
+href="mailto:ucsx18@intersighttme.de">ucsx18@intersighttme.de</a></td>
+<td style="text-align: center;">UCSX@Cisco123</td>
+<td style="text-align: center;">int-ucs-6-1-2</td>
+<td style="text-align: center;">int-ucs-6</td>
+<td style="text-align: center;">718</td>
+<td style="text-align: center;">SRV18</td>
+</tr>
+<tr>
+<td style="text-align: center;">19</td>
+<td style="text-align: center;"><a
+href="mailto:ucsx19@intersighttme.de">ucsx19@intersighttme.de</a></td>
+<td style="text-align: center;">UCSX@Cisco123</td>
+<td style="text-align: center;">int-ucs-6-1-3</td>
+<td style="text-align: center;">int-ucs-6</td>
+<td style="text-align: center;">719</td>
+<td style="text-align: center;">SRV19</td>
+</tr>
+<tr>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;"><a
+href="mailto:ucsx20@intersighttme.de">ucsx20@intersighttme.de</a></td>
+<td style="text-align: center;">UCSX@Cisco123</td>
+<td style="text-align: center;">int-ucs-6-1-4</td>
+<td style="text-align: center;">int-ucs-6</td>
+<td style="text-align: center;">720</td>
+<td style="text-align: center;">SRV20</td>
+</tr>
+<tr>
+<td style="text-align: center;">21</td>
+<td style="text-align: center;"><a
+href="mailto:ucsx21@intersighttme.de">ucsx21@intersighttme.de</a></td>
+<td style="text-align: center;">UCSX@Cisco123</td>
+<td style="text-align: center;">int-ucs-6-1-5</td>
+<td style="text-align: center;">int-ucs-6</td>
+<td style="text-align: center;">721</td>
+<td style="text-align: center;">SRV21</td>
+</tr>
+<tr>
+<td style="text-align: center;">22</td>
+<td style="text-align: center;"><a
+href="mailto:ucsx22@intersighttme.de">ucsx22@intersighttme.de</a></td>
+<td style="text-align: center;">UCSX@Cisco123</td>
+<td style="text-align: center;">int-ucs-6-1-6</td>
+<td style="text-align: center;">int-ucs-6</td>
+<td style="text-align: center;">722</td>
+<td style="text-align: center;">SRV22</td>
+</tr>
+<tr>
+<td style="text-align: center;">23</td>
+<td style="text-align: center;"><a
+href="mailto:ucsx23@intersighttme.de">ucsx23@intersighttme.de</a></td>
+<td style="text-align: center;">UCSX@Cisco123</td>
+<td style="text-align: center;">int-ucs-6-1-7</td>
+<td style="text-align: center;">int-ucs-6</td>
+<td style="text-align: center;">723</td>
+<td style="text-align: center;">SRV23</td>
+</tr>
+<tr>
+<td style="text-align: center;">24</td>
+<td style="text-align: center;"><a
+href="mailto:ucsx24@intersighttme.de">ucsx24@intersighttme.de</a></td>
+<td style="text-align: center;">UCSX@Cisco123</td>
+<td style="text-align: center;">int-ucs-6-1-8</td>
+<td style="text-align: center;">int-ucs-6</td>
+<td style="text-align: center;">724</td>
+<td style="text-align: center;">SRV24</td>
+</tr>
+<tr>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;"><a
+href="mailto:ucsx25@intersighttme.de">ucsx25@intersighttme.de</a></td>
+<td style="text-align: center;">UCSX@Cisco123</td>
+<td style="text-align: center;">int-ucs-7-1-1</td>
+<td style="text-align: center;">int-ucs-7</td>
+<td style="text-align: center;">725</td>
+<td style="text-align: center;">SRV25</td>
+</tr>
+<tr>
+<td style="text-align: center;">26</td>
+<td style="text-align: center;"><a
+href="mailto:ucsx26@intersighttme.de">ucsx26@intersighttme.de</a></td>
+<td style="text-align: center;">UCSX@Cisco123</td>
+<td style="text-align: center;">int-ucs-7-1-2</td>
+<td style="text-align: center;">int-ucs-7</td>
+<td style="text-align: center;">726</td>
+<td style="text-align: center;">SRV26</td>
+</tr>
+<tr>
+<td style="text-align: center;">27</td>
+<td style="text-align: center;"><a
+href="mailto:ucsx27@intersighttme.de">ucsx27@intersighttme.de</a></td>
+<td style="text-align: center;">UCSX@Cisco123</td>
+<td style="text-align: center;">int-ucs-7-1-3</td>
+<td style="text-align: center;">int-ucs-7</td>
+<td style="text-align: center;">727</td>
+<td style="text-align: center;">SRV27</td>
+</tr>
+<tr>
+<td style="text-align: center;">28</td>
+<td style="text-align: center;"><a
+href="mailto:ucsx28@intersighttme.de">ucsx28@intersighttme.de</a></td>
+<td style="text-align: center;">UCSX@Cisco123</td>
+<td style="text-align: center;">int-ucs-7-1-4</td>
+<td style="text-align: center;">int-ucs-7</td>
+<td style="text-align: center;">728</td>
+<td style="text-align: center;">SRV28</td>
+</tr>
+<tr>
+<td style="text-align: center;">29</td>
+<td style="text-align: center;"><a
+href="mailto:ucsx29@intersighttme.de">ucsx29@intersighttme.de</a></td>
+<td style="text-align: center;">UCSX@Cisco123</td>
+<td style="text-align: center;">int-ucs-7-1-5</td>
+<td style="text-align: center;">int-ucs-7</td>
+<td style="text-align: center;">729</td>
+<td style="text-align: center;">SRV29</td>
+</tr>
+<tr>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;"><a
+href="mailto:ucsx30@intersighttme.de">ucsx30@intersighttme.de</a></td>
+<td style="text-align: center;">UCSX@Cisco123</td>
+<td style="text-align: center;">int-ucs-7-1-6</td>
+<td style="text-align: center;">int-ucs-7</td>
+<td style="text-align: center;">730</td>
+<td style="text-align: center;">SRV30</td>
+</tr>
+</tbody>
+</table>
+<p>With the browser, goto: <a
+href="https://intersight.com">https://intersight.com</a></p>
+<p>You will see the following screen (figure 2):</p>
+<figure>
+<img src="assets/media/image3.png" style="width:5.27778in;height:4.67083in" alt="Intersight Login" />
+</figure>
+
+<p>Use the email address given to you, see Table 1, to sign in with
+SSO.</p>
+<p>It is possible that you see the following message:</p>
+<figure>
+<img src="assets/media/image4.png" style="width:7in;height:4.14in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<p>Just click on Advanced and Proceed to sts.intersighttme.de.</p>
+<figure>
+<img src="assets/media/image5.png" style="width:5.90725in;height:4.33217in" alt="Certificate Proceed" />
+</figure>
+
+<p>Here you can fill in the password, given to you in table 1. Make sure
+you only input just the user in the username field, not the user@domain
+as shown in the example below:</p>
+<img src="assets/media/image6.png" title="Intersight Username" style="width:3.29828in;height:1.96782in" />
+
+<p>If you see this error message, please try to login again:</p>
+<figure>
+<img src="assets/media/image7.png" style="width:4.28333in;height:5.4488in" alt="A screenshot of a computer error message Description automatically generated" />
+</figure>
+
+<p>If you successfully log in, you should see a screen similar to the
+image below:</p>
+<figure>
+<img src="assets/media/image8.png" style="width:5.44033in;height:2.85295in" alt="A screenshot of a computer AI-generated content may be incorrect." />
+</figure>
+
+<p>If you don’t see the <strong>Dashboards</strong> page, click on
+<strong>Dashboards</strong> from the left navigation pane:</p>
+<figure>
+<img src="assets/media/image9.png" style="width:2.3838in;height:3.375in" />
+</figure>
+
+<h2 id="resource-groups-overview">Resource Groups Overview</h2>
+<p>The slide below shows that Resource group is a way to do Roll Based
+Access:</p>
+<figure>
+<img src="assets/media/image10.png" style="width:6.04109in;height:3.51246in" alt="A diagram of a system Description automatically generated" />
+<figcaption><p>Figure 9</p></figcaption>
+</figure>
+
+<p>In this lab, we are sharing devices, like Fabric Interconnects and
+servers, with another Lab Workshop. When creating new policies in this
+lab, you will see the organizations
+<strong>X-Series-Configuration</strong> and
+<strong>UCSX-Lab-Resources</strong> in the dropdown box similar to the
+image below:</p>
+<figure>
+<img src="assets/media/image11.png" style="width:3.8125in;height:1.75789in" alt="A screenshot of a computer Description automatically generated" />
+<figcaption><p>0</p></figcaption>
+</figure>
+
+<p>The <strong>UCSX-Lab-Resources</strong> organization is read-only.
+You can use those configurations if you want and if directed to do
+so.</p>
+<p>Here is an example where the UCSX-Power policy is in the Organization
+UCSX-LAB-RESOURCES</p>
+<figure>
+<img src="assets/media/image12.png" style="width:1.99831in;height:3.48452in" alt="A screenshot of a computer Description automatically generated" />
+<figcaption><p>Figure 11</p></figcaption>
+</figure>
+
+<h2 id="tags-filters-and-user-labels">Tags, Filters and User Labels</h2>
+<p>During this lab, we will be creating policies. When creating
+policies, you can work with Tags. This can make life easier to search
+for specific parameters. For the following upcoming tasks, please use
+your pod number.</p>
+<p>To set up a Tag in a policy, enter a name and colon in the Set Tags
+Field (i.e. <em>Example: POD:1)</em> and then hit enter. You will see
+<strong>POD 1</strong> in grey (Figure 13)</p>
+<figure>
+<img src="assets/media/image13.png" style="width:4.34167in;height:0.83641in" alt="A blue lines on a black background Description automatically generated" />
+</figure>
+
+<figure>
+<img src="assets/media/image14.png" style="width:4.4in;height:0.8in" alt="A black background with white text Description automatically generated" />
+</figure>
+
+<p>There are filters, and there are different ways to use them. You can
+start typing a text and hit enter. Now, you will see the policies with
+that search text in them.</p>
+<figure>
+<img src="assets/media/image15.png" style="width:4.86667in;height:0.954in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<figure>
+<img src="assets/media/image16.png" style="width:5.23333in;height:0.84935in" alt="A black background with white text Description automatically generated" />
+</figure>
+
+<figure>
+<img src="assets/media/image17.png" style="width:3.97917in;height:1.24308in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<p>In the lab, you will also be able to search on the
+<strong>TAGS</strong>. Just enter the tag name, and you will see a
+selection.</p>
+<p>Later in the lab after you have created profiles, you can enter the
+tag key followed by <strong>:</strong> and then choose the TAG numbers
+similar to the image below:</p>
+<figure>
+<img src="assets/media/image18.png" style="width:4.425in;height:1.3426in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<figure>
+<img src="assets/media/image19.png" style="width:3.24167in;height:1.22113in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<p>Now you will see only the results with the tag
+<strong>POD:1</strong></p>
+<figure>
+<img src="assets/media/image20.png" style="width:5.05833in;height:1.56667in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<p><strong>User Labels</strong></p>
+<p>Intersight can manage thousands of servers and have users assigned to
+servers to make life easier for a systems administrator by implementing
+<strong>User Labels</strong>.</p>
+<p>This can be accomplished from the Servers section under
+Intersight.</p>
+<figure>
+<img src="assets/media/image21.png" style="width:1.85333in;height:1.5625in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<p>Locate the server assigned to you from the lab guide and click on the
+three dots next to your assign server. Next, select
+<strong>System</strong> and then select <strong>Set User Label</strong>
+as shown in the image below:</p>
+<figure>
+<img src="assets/media/image22.png" style="width:4.16667in;height:4.36288in" alt="A screenshot of a computer program Description automatically generated" />
+</figure>
+
+<p>At this moment, you may not see the user labels at the server
+overview. To enable the column, click <strong>Settings</strong> next to
+the All Servers tab and select <strong>edit</strong> as shown in the
+image below:</p>
+<figure>
+<img src="assets/media/image23.png" style="width:2.98662in;height:2.45786in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<p>Now, scroll down and select <strong>User Label</strong> then select
+<strong>Save:</strong></p>
+<figure>
+<img src="assets/media/image24.png" style="width:2.54167in;height:2.11146in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<p>Now you will see the User Label and you can filter on it or move it
+to the first column:</p>
+<figure>
+<img src="assets/media/image25.png" style="width:7.25347in;height:0.66294in" />
+</figure>
+
+    </main>
+  </div>
+</body>
+</html>

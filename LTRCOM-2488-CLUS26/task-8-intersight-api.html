@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task 8: Intersight API | LTRCOM-2488</title>
+  <link rel="stylesheet" href="assets/stylesheets/github-pages.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">LTRCOM-2488</a>
+  </header>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Site navigation">
+<a class="" href="index.html">Home</a>
+<a class="" href="background.html">Background</a>
+<a class="" href="scenario.html">Scenario</a>
+<a class="" href="network-diagram.html">Network Diagram</a>
+<a class="" href="task-1-let-s-start-with-the-lab.html">Task 1: Let’s start with the lab!</a>
+<a class="" href="task-2-configuring-fabric-interconnects.html">Task 2: Configuring Fabric Interconnects</a>
+<a class="" href="task-3-create-chassis-policy-template.html">Task 3: Create Chassis Policy Template</a>
+<a class="" href="task-4-inventory.html">Task 4: Inventory</a>
+<a class="" href="task-5-create-server-profile-template.html">Task 5: Create Server Profile Template</a>
+<a class="" href="task-6-deploying-server-profiles.html">Task 6: Deploying Server Profiles</a>
+<a class="" href="task-7-metrics.html">Task 7: Metrics</a>
+<a class="active" href="task-8-intersight-api.html">Task 8: Intersight API</a>
+<a class="" href="bonus-task.html">Bonus Task</a>
+<a class="" href="the-end.html">The End</a>
+    </nav>
+    <main class="content">
+<h1 id="task-8-intersight-api">Task 8: Intersight API</h1>
+<p>APIs are very useful for automation and get information quickly.</p>
+<p>In this section we will go over the Intersight API Rest Client and
+how you can use it.</p>
+<p>There are open-source applications, like <strong>isctl</strong> that
+can be used to create your own</p>
+<p>Script/application.</p>
+<h2 id="step-1-where-to-find-the-intersight-api-rest-client">Step 1:
+Where to find the Intersight API Rest Client?</h2>
+<p>When you are loged in into Intersight, you can go to the Help
+Center.</p>
+<figure>
+<img src="assets/media/image252.png" style="width:4.59066in;height:2.00413in" />
+</figure>
+
+<p>Once you are at the Intersight Help Center, Scroll all the way down
+to the <strong>Intersight Services”</strong> and select API
+Documentation.</p>
+<figure>
+<img src="assets/media/image253.png" style="width:7.90833in;height:1.90833in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<p>At the top bar, click <strong>API reference</strong> and here you
+will see the API Rest Client.</p>
+<figure>
+<img src="assets/media/image254.png" style="width:7.91666in;height:0.34375in" />
+</figure>
+
+<h2 id="step-2-getting-chassis-information">Step 2: Getting Chassis
+Information</h2>
+<p>In this step you will see how you can get information out of the
+API.</p>
+<p>Find the <strong>equipment/Chssisidentities</strong> by using the
+search bar. You will see scrolling to the list is time consuming.</p>
+<figure>
+<img src="assets/media/image255.png" style="width:3.13194in;height:2.68931in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<p>When you open it, there are two the same get. The top one is to get
+all information of all chassis in the tenant. The second one is to get
+specific information of a chassis, but then you will have to know the
+MOID.</p>
+<figure>
+<img src="assets/media/image256.png" style="width:2.94023in;height:3.32639in" alt="A screenshot of a chat Description automatically generated" />
+</figure>
+
+<p>Select the top GET and make sure <strong>REST Client</strong> is
+enabled. When it is enabled, you will see the REST Client on the right.
+Click <strong>Send.</strong></p>
+<figure>
+<img src="assets/media/image257.png" style="width:4.38048in;height:4.04306in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<p>When you see a “200 success” the API information is there. You will
+see different MOID in the response and you will have to search for your
+chassis and MOID. Search for Chassis you want to get more information
+and then copy that MOID number.</p>
+<img src="assets/media/image258.png" style="width:5.01389in;height:2.27418in" alt="A screen shot of a computer Description automatically generated" />
+
+<p>Go back to the left and now click on the second get:</p>
+<figure>
+<img src="assets/media/image259.png" style="width:2.88884in;height:3.52778in" alt="A screenshot of a chat Description automatically generated" />
+</figure>
+
+<p>With this get, you need the MOID that you just copied. Fill it in the
+{Moid} field.</p>
+<figure>
+<img src="assets/media/image260.png" style="width:4.20833in;height:2.50842in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<p>The result is that you get only information about one chassis.</p>
+<figure>
+<img src="assets/media/image261.png" style="width:5.32721in;height:6.87453in" alt="A screenshot of a computer program Description automatically generated" />
+</figure>
+
+<h2 id="step-3-query-parameters">Step 3: Query Parameters</h2>
+<p>To get only the information you want to have, <strong>Query
+Parameters</strong> can be used.</p>
+<p>Select the first “get” of the
+<strong>equipment/Chassisidentities</strong> and add a Query Paramter.
+The Key is <strong>$select</strong> and the Value is <strong>Name,
+Serial</strong>. The Moid will be shown, eventhough it is not
+selected.</p>
+<img src="assets/media/image262.png" style="width:4.23988in;height:5.81944in" alt="A screenshot of a computer Description automatically generated" />
+
+<p>To show serial numbers and models of the servers connected to a
+particular Fabric Interconnect we are using the
+<strong>Compute/PhysicalSummaries</strong> API. This will give you ideas
+how to use the query parameters.</p>
+<p>Find this API in the search bar.</p>
+<figure>
+<img src="assets/media/image263.png" style="width:3.03059in;height:4.26528in" alt="A screenshot of a web page Description automatically generated" />
+</figure>
+
+<p>Select the first Get and add a Query Parameter.</p>
+<p>Key: <strong>$select</strong> and Value: <strong>Name, Serial,
+Model</strong> Then add another Query Parameter:</p>
+<p>Key; <strong>$filter</strong> and Value:
+<strong>startswith(Name,’RTP91-FI6454-03-1’)</strong></p>
+<figure>
+<img src="assets/media/image264.png" style="width:3.64705in;height:6.21327in" alt="A screenshot of a computer program Description automatically generated" />
+</figure>
+
+<h2 id="step-4-opensource-tools">Step 4: Opensource tools</h2>
+<p>The Intersight REST API Client is great and it is possible to use
+other tools like isctl. First you have to download it from : <a
+href="https://github.com/cgascoig/isctl">https://github.com/cgascoig/isctl</a></p>
+<figure>
+<img src="assets/media/image265.png" style="width:3.53333in;height:2.09988in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<p>On the right side of the webpage, click on the latest release.</p>
+<figure>
+<img src="assets/media/image266.png" style="width:2.57639in;height:1.17233in" alt="A screenshot of a chat Description automatically generated" />
+</figure>
+
+<p>Download the windows version.</p>
+<figure>
+<img src="assets/media/image267.png" style="width:2.79056in;height:1.79167in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<p>Extract the file and copy the executable in a directory on the
+laptop.</p>
+<figure>
+<img src="assets/media/image268.png" style="width:3.53333in;height:0.625in" alt="A blue rectangle with white border Description automatically generated" />
+</figure>
+
+<p>Before you can use this application, you must have an API key of
+Intersight.</p>
+<p>Go to <strong>Intersight / Settings.</strong></p>
+<figure>
+<img src="assets/media/image269.png" style="width:2.17231in;height:4.09683in" />
+</figure>
+
+<p>Go to API Keys and generate an API Key for OpenAPI schema version 3.
+<img src="assets/media/image270.png" style="width:7.70834in;height:2.90625in" /></p>
+<p>Give it a description and expiration date for the future.</p>
+<figure>
+<img src="assets/media/image271.png" style="width:4.47269in;height:4.28555in" />
+</figure>
+
+<p>When the API Key is generated, copy the API Key ID and download the
+secret key. <strong>Do not close this window, until you are certain the
+isctl application is working.</strong></p>
+<figure>
+<img src="assets/media/image272.png" style="width:3.81754in;height:3.75694in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<p>Open the Command prompt in Windows (CMD)</p>
+<p>And type: <strong>isctl configure</strong></p>
+<p>You will have to give the API Key ID and the location of the API
+secret key file.</p>
+<figure>
+<img src="assets/media/image273.png" style="width:7in;height:3.83in" alt="A screenshot of a computer Description automatically generated" />
+</figure>
+
+<figure>
+<img src="assets/media/image274.png" style="width:7in;height:1.18in" alt="A computer screen with white text Description automatically generated" />
+</figure>
+
+<p>Once that is working, you can test it by typing the following
+command; <strong>isctl get ntp policy</strong></p>
+<figure>
+<img src="assets/media/image275.png" style="width:7in;height:1.16in" alt="A screen shot of a computer Description automatically generated" />
+</figure>
+
+<p>To get the same result as the step with the filter and select query
+paramer, you can type: <strong>isctl get compute physicalsummary
+--select "Name,Serial,Model" --filter
+"startswith(Name,'RTP91-FI6454-03-1')</strong></p>
+<p>There are two <strong>–</strong> before select and filter parameter
+and it is case sensitive.</p>
+<figure>
+<img src="assets/media/image276.png" style="width:6.88909in;height:1.41108in" alt="A screen shot of a computer Description automatically generated" />
+</figure>
+
+<p>To have the output in a certain order, you can use -o Name</p>
+<figure>
+<img src="assets/media/image277.png" style="width:6.98501in;height:1.27742in" alt="A black screen with white text Description automatically generated" />
+</figure>
+
+<p>Different outputs are possible like yaml, json, csv, xlsx.</p>
+<figure>
+<img src="assets/media/image278.png" style="width:6.93477in;height:1.61101in" alt="A black screen with white text Description automatically generated" />
+</figure>
+
+<figure>
+<img src="assets/media/image279.png" style="width:6.92436in;height:1.17392in" alt="A black screen with white text Description automatically generated" />
+</figure>
+
+    </main>
+  </div>
+</body>
+</html>
