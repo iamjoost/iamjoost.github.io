@@ -46,6 +46,7 @@ Upon completion of this lab, you will be able to:
 - [Task 4: Inventory](task-4-inventory.md)
 - [Task 5: Create Server Profile Template](task-5-create-server-profile-template.md)
 - [Task 6: Deploying Server Profiles](task-6-deploying-server-profiles.md)
+  
 - [Task 7: Metrics](task-7-metrics.md)
 - [Task 8: Intersight API](task-8-intersight-api.md)
 - [Bonus Task](bonus-task.md)
